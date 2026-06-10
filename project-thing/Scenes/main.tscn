@@ -37,14 +37,14 @@ position = Vector2(574.75, 54.25)
 shape = SubResource("RectangleShape2D_bo1nx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1243889156]
-position = Vector2(1204, 369)
+position = Vector2(1203, 369)
 shape = SubResource("RectangleShape2D_8gbba")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1050231216]
 position = Vector2(575, 681)
 shape = SubResource("RectangleShape2D_jjvhh")
 
-[node name="CharacterBody2D" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
+[node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
 position = Vector2(530, 387)
 slide_on_ceiling = false
 floor_stop_on_slope = false
