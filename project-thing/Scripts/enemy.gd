@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed: float = 250.0
+var speed: float = 150.0
 var player: CharacterBody2D
 var health: int = 2
 
@@ -19,8 +19,6 @@ func _process(_delta: float) -> void:
 func take_damage() -> void:
 	if health > 1:
 		health -= 1
-	else:
-		queue_free()
 
 func _damage_player(body:Node2D) -> void:
 	if body == player:
