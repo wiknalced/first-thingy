@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cs1blg5rbsleo"]
 
+[ext_resource type="Script" uid="uid://c55lfo00yrt10" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bcoiqnrkkcrdy" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://b0s2c2bvkc100" path="res://Scenes/enemy_spawn.tscn" id="2_bo1nx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
@@ -14,7 +16,10 @@ size = Vector2(108, 576.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(1161, 55)
 
-[node name="Node2D" type="Node2D" unique_id=1114766402]
+[node name="Node2D" type="Node2D" unique_id=1114766402 node_paths=PackedStringArray("enemy_spawn", "enemy_spawn_timer")]
+script = ExtResource("1_8gbba")
+enemy_spawn = NodePath("StaticBody2D")
+enemy_spawn_timer = NodePath("Timer")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1900117712]
 offset_right = 1153.0
@@ -45,8 +50,16 @@ position = Vector2(575, 681)
 shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(530, 387)
+position = Vector2(575, 387)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 0.001
+
+[node name="Timer" type="Timer" parent="." unique_id=832517963]
+autostart = true
+
+[node name="StaticBody2D" parent="." unique_id=402275816 instance=ExtResource("2_bo1nx")]
+position = Vector2(573, 115)
+
+[connection signal="timeout" from="Timer" to="." method="_enemy_timer"]

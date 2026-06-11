@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_hghv2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
