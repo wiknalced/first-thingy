@@ -12,6 +12,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		pass
 		
-func _damage_enemy(body: Node2D) -> void:
+func _damage_enemy(body:CharacterBody2D) -> void:
 	if body == enemy:
 		enemy.take_damage()

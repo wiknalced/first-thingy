@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2spt47ih5lu0" path="res://Scripts/weapons.gd" id="1_g2em3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fjl"]
-size = Vector2(5, 20)
+size = Vector2(10, 20)
 
 [node name="Area2D" type="Area2D" unique_id=435731528]
 script = ExtResource("1_g2em3")
@@ -12,10 +12,10 @@ script = ExtResource("1_g2em3")
 shape = SubResource("RectangleShape2D_b8fjl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1589249733]
-offset_left = 5.0
-offset_top = -8.0
-offset_right = 9.0
-offset_bottom = 11.0
+offset_left = -2.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 10.0
 
 [node name="weaponcdtimer" type="Timer" parent="." unique_id=38606092]
 

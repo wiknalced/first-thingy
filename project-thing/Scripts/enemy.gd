@@ -20,6 +20,6 @@ func take_damage() -> void:
 	if health > 1:
 		health -= 1
 
-func _damage_player(body:Node2D) -> void:
+func _damage_player(body:CharacterBody2D) -> void:
 	if body == player:
 		player.take_damage()

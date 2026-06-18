@@ -24,6 +24,3 @@ func take_damage() -> void:
 	else: 
 		get_tree().call_deferred("reload_current_scene")
 		
-func _damage_enemy(body: Node2D) -> void:
-	if body == enemy:
-		enemy.take_damage()

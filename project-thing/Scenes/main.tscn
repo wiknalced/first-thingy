@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://c55lfo00yrt10" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bcoiqnrkkcrdy" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b0s2c2bvkc100" path="res://Scenes/enemy_spawn.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://d370rh7k3t37r" path="res://Assets/health ui background.png" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://r6cl438pj1ay" path="res://Assets/actual floor.png" id="2_kry3j"]
+[ext_resource type="Texture2D" uid="uid://0jfmw4dsrpfp" path="res://Assets/walls.png" id="4_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
@@ -21,15 +24,25 @@ script = ExtResource("1_8gbba")
 enemy_spawn = NodePath("StaticBody2D")
 enemy_spawn_timer = NodePath("Timer")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1900117712]
-offset_right = 1153.0
-offset_bottom = 650.0
-color = Color(0, 0, 0, 1)
+[node name="ActualFloor" type="Sprite2D" parent="." unique_id=1018971350]
+position = Vector2(577.5, 386.5)
+scale = Vector2(1.7828125, 1.5083333)
+texture = ExtResource("2_kry3j")
 
-[node name="Floor" type="ColorRect" parent="." unique_id=1418863183]
-offset_top = 105.0
-offset_right = 1153.0
-offset_bottom = 650.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1962257775]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=6973550]
+offset_left = 46.999996
+offset_top = -45.999996
+offset_right = 167.0
+offset_bottom = 74.0
+scale = Vector2(2.3838341, 2.3838341)
+texture_under = ExtResource("2_jjvhh")
+
+[node name="Walls" type="Sprite2D" parent="." unique_id=2052556626]
+position = Vector2(576, 290)
+scale = Vector2(1.7796875, 1.5916667)
+texture = ExtResource("4_21xkr")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1462920220]
 
@@ -56,16 +69,16 @@ floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 0.001
 
-[node name="Timer" type="Timer" parent="." unique_id=832517963]
-autostart = true
-
 [node name="StaticBody2D" parent="." unique_id=402275816 instance=ExtResource("2_bo1nx")]
-position = Vector2(575, 105)
+position = Vector2(573, 196)
 
 [node name="StaticBody2D3" parent="." unique_id=96604690 instance=ExtResource("2_bo1nx")]
 position = Vector2(-45, 390)
 
 [node name="StaticBody2D4" parent="." unique_id=707452505 instance=ExtResource("2_bo1nx")]
 position = Vector2(1194, 393)
+
+[node name="Timer" type="Timer" parent="." unique_id=832517963]
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
