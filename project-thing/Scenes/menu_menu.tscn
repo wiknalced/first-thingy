@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://df7pe4qu4mcin"]
 
+[ext_resource type="Script" uid="uid://ct28pwdotray8" path="res://Scripts/main_menu.gd" id="1_nwjd5"]
 [ext_resource type="Texture2D" uid="uid://c2fw346g1xhi3" path="res://Assets/blurry floor.png" id="1_t8sph"]
 [ext_resource type="Texture2D" uid="uid://dggp2qdb867sp" path="res://Assets/board buttons.png" id="2_6gqac"]
 [ext_resource type="Texture2D" uid="uid://2y0k5th8vqs" path="res://Assets/board buttons component.png" id="2_8jtbs"]
 [ext_resource type="Texture2D" uid="uid://dhk8jat82v0qb" path="res://Assets/button.png" id="4_j42y7"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_j42y7"]
+[ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_p5uw6"]
 
 [sub_resource type="Image" id="Image_8jah3"]
 data = {
@@ -448,12 +450,28 @@ cache/0/35/0/glyphs/74/texture_idx = 0
 font = SubResource("FontFile_nwjd5")
 font_size = 60
 font_color = Color(0.6117647, 0.35686275, 0, 1)
-outline_size = 5
+outline_size = 20
 outline_color = Color(0.19215687, 0.12156863, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_jw2wm"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+	
+
+
+func _play() -> void:
+	get_tree().call_deferred(\"change_scene_to_file\", \"res://scenes/main.tscn\")
+	
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_p5uw6"]
 font = ExtResource("5_j42y7")
 font_color = Color(0.6117647, 0.35686275, 0, 1)
+outline_size = 5
 outline_color = Color(0.19215687, 0.12156863, 0, 1)
 
 [node name="Control" type="Control" unique_id=1840759302]
@@ -463,21 +481,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nwjd5")
 
 [node name="BlurryFloor" type="Sprite2D" parent="." unique_id=1120247758]
-position = Vector2(615.99994, 306)
+position = Vector2(578.99994, 321.00003)
 scale = Vector2(1.7953125, 1.7916666)
 texture = ExtResource("1_t8sph")
 
 [node name="BoardButtonsComponent" type="Sprite2D" parent="." unique_id=1738185338]
-position = Vector2(316.99997, 302)
-scale = Vector2(1.7887769, 1.8288519)
+position = Vector2(291.71912, 336.52832)
+scale = Vector2(1.7887769, 1.9172039)
 texture = ExtResource("2_8jtbs")
 region_enabled = true
 region_rect = Rect2(0, 0, 353.14172, 360)
 
 [node name="BoardButtons" type="Sprite2D" parent="." unique_id=34841024]
-position = Vector2(353.00003, 104.00001)
+position = Vector2(327.71918, 122.62501)
 scale = Vector2(1.6686276, 1.8137255)
 texture = ExtResource("2_6gqac")
 region_enabled = true
@@ -485,10 +504,10 @@ region_rect = Rect2(17.00185, 7.168312, 353.52777, 102.36085)
 
 [node name="Label" type="Label" parent="." unique_id=1533965337]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 21.0
-offset_right = 631.0
-offset_bottom = 186.0
+offset_left = 63.719147
+offset_top = 39.625
+offset_right = 605.7191
+offset_bottom = 204.625
 text = "Bot Bat 
 BobaT"
 label_settings = SubResource("LabelSettings_jw2wm")
@@ -498,26 +517,25 @@ autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1730525697]
 layout_mode = 0
-offset_left = 137.0
-offset_top = 208.0
-offset_right = 491.0
-offset_bottom = 670.0145
+offset_left = 104.71915
+offset_top = 216.625
+offset_right = 458.71915
+offset_bottom = 678.6395
 scale = Vector2(1.25, 0.879)
-theme_override_constants/separation = 120
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=980903597]
 layout_mode = 2
 texture_normal = ExtResource("4_j42y7")
-ignore_texture_size = true
-stretch_mode = 3
+script = SubResource("GDScript_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton" unique_id=37644228]
 layout_mode = 0
-offset_left = 127.200005
-offset_top = -44.174053
-offset_right = 167.19998
-offset_bottom = -21.174053
+offset_left = 124.224686
+offset_top = 16.353817
+offset_right = 164.22467
+offset_bottom = 39.353813
 scale = Vector2(2.8478823, 3.7758818)
 text = "Play"
 label_settings = SubResource("LabelSettings_p5uw6")
@@ -525,15 +543,13 @@ label_settings = SubResource("LabelSettings_p5uw6")
 [node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=866414784]
 layout_mode = 2
 texture_normal = ExtResource("4_j42y7")
-ignore_texture_size = true
-stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton2" unique_id=1179006680]
 layout_mode = 0
-offset_left = 46.40001
-offset_top = -36.756565
-offset_right = 140.40001
-offset_bottom = -13.756565
+offset_left = 47.42468
+offset_top = 11.05917
+offset_right = 141.42468
+offset_bottom = 34.05917
 scale = Vector2(2.8478823, 3.7758818)
 text = "Collections"
 label_settings = SubResource("LabelSettings_p5uw6")
@@ -541,15 +557,13 @@ label_settings = SubResource("LabelSettings_p5uw6")
 [node name="TextureButton3" type="TextureButton" parent="VBoxContainer" unique_id=719649007]
 layout_mode = 2
 texture_normal = ExtResource("4_j42y7")
-ignore_texture_size = true
-stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton3" unique_id=1261549428]
 layout_mode = 0
-offset_left = 84.79999
-offset_top = -42.990913
-offset_right = 150.79999
-offset_bottom = -19.990913
+offset_left = 82.62468
+offset_top = 18.278732
+offset_right = 148.62468
+offset_bottom = 41.278732
 scale = Vector2(2.8478823, 3.7758818)
 text = "Options"
 label_settings = SubResource("LabelSettings_p5uw6")
@@ -557,15 +571,30 @@ label_settings = SubResource("LabelSettings_p5uw6")
 [node name="TextureButton4" type="TextureButton" parent="VBoxContainer" unique_id=2065931796]
 layout_mode = 2
 texture_normal = ExtResource("4_j42y7")
-ignore_texture_size = true
-stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton4" unique_id=1586087394]
 layout_mode = 0
-offset_left = 61.599987
-offset_top = -31.022789
-offset_right = 146.59999
-offset_bottom = -8.022789
+offset_left = 69.02468
+offset_top = 15.889709
+offset_right = 154.02469
+offset_bottom = 38.88971
 scale = Vector2(2.8478823, 3.7758818)
 text = "Exit Game"
 label_settings = SubResource("LabelSettings_p5uw6")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=988604398]
+position = Vector2(852.7191, 318.625)
+scale = Vector2(6.34375, 6.34375)
+texture = ExtResource("6_p5uw6")
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=52161308]
+oversampling_override = 1.0
+mode = 4
+title = "Are you sure you want to quit?"
+initial_position = 1
+ok_button_text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer/TextureButton" method="_play"]
+[connection signal="pressed" from="VBoxContainer/TextureButton4" to="." method="_quit"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_unconfirm"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_confirm"]
