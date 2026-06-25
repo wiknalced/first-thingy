@@ -1,25 +1,27 @@
 [gd_scene format=3 uid="uid://tw1d135t4ugu"]
 
-[ext_resource type="Script" uid="uid://2spt47ih5lu0" path="res://Scripts/weapons.gd" id="1_g2em3"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fjl"]
-size = Vector2(10, 20)
+size = Vector2(10, 29)
 
-[node name="Area2D" type="Area2D" unique_id=435731528]
-script = ExtResource("1_g2em3")
+[node name="Area2D" type="Area2D" unique_id=435731528 groups=["weapon_area"]]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1393840915]
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_b8fjl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1589249733]
-offset_left = -2.0
-offset_top = -9.0
-offset_right = 2.0
-offset_bottom = 10.0
+offset_left = -3.0
+offset_top = -18.0
+offset_right = 3.2500029
+offset_bottom = 10.374996
+scale = Vector2(0.9599994, 0.96000016)
 
 [node name="weaponcdtimer" type="Timer" parent="." unique_id=38606092]
 
 [node name="activeweaponattacktimer" type="Timer" parent="." unique_id=168137622]
 
-[connection signal="body_entered" from="." to="." method="_damage_enemy"]
+[connection signal="body_entered" from="." to="." method="_enemy_in_range"]
+[connection signal="body_exited" from="." to="." method="_enemy_out_range"]
 [connection signal="timeout" from="activeweaponattacktimer" to="." method="_attack_timer"]

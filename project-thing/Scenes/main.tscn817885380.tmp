@@ -62,6 +62,13 @@ shape = SubResource("RectangleShape2D_8gbba")
 position = Vector2(575, 681)
 shape = SubResource("RectangleShape2D_jjvhh")
 
+[node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
+position = Vector2(575, 387)
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+safe_margin = 0.001
+
 [node name="StaticBody2D" parent="." unique_id=402275816 instance=ExtResource("2_bo1nx")]
 position = Vector2(573, 196)
 
@@ -73,13 +80,5 @@ position = Vector2(1194, 393)
 
 [node name="Timer" type="Timer" parent="." unique_id=832517963]
 autostart = true
-
-[node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(575, 387)
-scale = Vector2(1.5200012, 1.5200012)
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_block_on_wall = false
-safe_margin = 0.001
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]

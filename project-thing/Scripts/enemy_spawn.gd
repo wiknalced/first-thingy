@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		_spawn_enemy()
+		pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _spawn_enemy() -> void:
 	var enemy= enemy_scene.instantiate()

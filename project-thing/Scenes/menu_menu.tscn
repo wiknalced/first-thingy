@@ -474,6 +474,17 @@ font_color = Color(0.6117647, 0.35686275, 0, 1)
 outline_size = 5
 outline_color = Color(0.19215687, 0.12156863, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwjd5"]
+texture = ExtResource("4_j42y7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jw2wm"]
+texture = ExtResource("4_j42y7")
+
+[sub_resource type="Theme" id="Theme_jw2wm"]
+default_font = ExtResource("5_j42y7")
+Window/styles/embedded_border = SubResource("StyleBoxTexture_nwjd5")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_jw2wm")
+
 [node name="Control" type="Control" unique_id=1840759302]
 layout_mode = 3
 anchors_preset = 15
@@ -592,6 +603,8 @@ oversampling_override = 1.0
 mode = 4
 title = "Are you sure you want to quit?"
 initial_position = 1
+size = Vector2i(350, 100)
+theme = SubResource("Theme_jw2wm")
 ok_button_text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer/TextureButton" method="_play"]

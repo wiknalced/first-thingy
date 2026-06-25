@@ -19,6 +19,8 @@ func _process(_delta: float) -> void:
 func take_damage() -> void:
 	if health > 1:
 		health -= 1
+	else:
+		queue_free()
 
 func _damage_player(body:CharacterBody2D) -> void:
 	if body == player:

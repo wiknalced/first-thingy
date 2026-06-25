@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project thing"
-run/main_scene="uid://cs1blg5rbsleo"
+run/main_scene="uid://df7pe4qu4mcin"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [physics]
