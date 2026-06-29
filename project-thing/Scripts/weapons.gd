@@ -1,8 +1,9 @@
 extends Area2D
 
+var is_attacking : bool = false
 var enemy = CharacterBody2D
-var enemy_range : CharacterBody2D = null
 
+@export var is_attack : Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -10,14 +11,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		if enemy_range:
-			enemy_range.take_damage()
-			print("damage")
+		is_attacking = true
+		is_attack.start()
+		
+	
+func _damage_enemy(body: CharacterBody2D) -> void:
+	if is_attacking:
+		if body.is_in_group("enemy"):
+			body.take_damage()
+			
 
-func _enemy_in_range(body: CharacterBody2D) -> void:
-	if body.is_in_group("enemy"):
-		enemy_range = body
-
-func _enemy_out_range(body: CharacterBody2D) -> void:
-	if body.is_in_group("enemy"):
-		enemy_range = null
+func _is_attack() -> void: 
+	is_attacking = false
+	

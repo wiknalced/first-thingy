@@ -474,16 +474,10 @@ font_color = Color(0.6117647, 0.35686275, 0, 1)
 outline_size = 5
 outline_color = Color(0.19215687, 0.12156863, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwjd5"]
-texture = ExtResource("4_j42y7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jw2wm"]
-texture = ExtResource("4_j42y7")
-
 [sub_resource type="Theme" id="Theme_jw2wm"]
 default_font = ExtResource("5_j42y7")
-Window/styles/embedded_border = SubResource("StyleBoxTexture_nwjd5")
-Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_jw2wm")
+Window/styles/embedded_border = null
+Window/styles/embedded_unfocused_border = null
 
 [node name="Control" type="Control" unique_id=1840759302]
 layout_mode = 3
@@ -519,7 +513,7 @@ offset_left = 63.719147
 offset_top = 39.625
 offset_right = 605.7191
 offset_bottom = 204.625
-text = "Bot Bat 
+text = "BoT BaT 
 BobaT"
 label_settings = SubResource("LabelSettings_jw2wm")
 horizontal_alignment = 1

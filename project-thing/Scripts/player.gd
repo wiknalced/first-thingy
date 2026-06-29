@@ -3,12 +3,21 @@ extends CharacterBody2D
 var enemy = CharacterBody2D
 var speed: float = 300
 var health: int = 5
+var can_attack : bool = true
+
+@export var pivot : Node2D
+@export var attack_spawn : Marker2D
+@export var weapons_scene : PackedScene
+@export var attack_timer : Timer
+
+
 
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("enemy"):
 		enemy = node
 func _process(_delta) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_accept") and can_attack:
+		_attack()
 
 func _physics_process(_delta: float) -> void:
 	var direction : Vector2 = Vector2(0.0, 0.0)
@@ -23,4 +32,14 @@ func take_damage() -> void:
 		print(health)
 	else: 
 		get_tree().call_deferred("reload_current_scene")
-		
+
+func _attack() -> void:
+	var weapon = weapons_scene.instantiate()
+	weapon.rotation = pivot.rotation
+	weapon.global_position = attack_spawn.global_position
+	add_sibling(weapon)
+	can_attack = false
+	attack_timer.start()
+	
+func _attack_cd() -> void:
+	can_attack = true

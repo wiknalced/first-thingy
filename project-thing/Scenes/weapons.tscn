@@ -1,27 +1,28 @@
 [gd_scene format=3 uid="uid://tw1d135t4ugu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fjl"]
-size = Vector2(10, 29)
+[ext_resource type="Script" uid="uid://2spt47ih5lu0" path="res://Scripts/weapons.gd" id="1_g2em3"]
 
-[node name="Area2D" type="Area2D" unique_id=435731528 groups=["weapon_area"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fjl"]
+size = Vector2(34.899345, 64.212814)
+
+[node name="Area2D" type="Area2D" unique_id=435731528 node_paths=PackedStringArray("is_attack") groups=["weapon_area"]]
+rotation = 0.5235988
 collision_layer = 2
 collision_mask = 4
+script = ExtResource("1_g2em3")
+is_attack = NodePath("Timer")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2036312765]
+offset_left = -3.7057734
+offset_top = -52.983047
+offset_right = 29.540356
+offset_bottom = 9.535599
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1393840915]
-position = Vector2(0, -4.5)
+position = Vector2(12.44967, -22.106407)
 shape = SubResource("RectangleShape2D_b8fjl")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1589249733]
-offset_left = -3.0
-offset_top = -18.0
-offset_right = 3.2500029
-offset_bottom = 10.374996
-scale = Vector2(0.9599994, 0.96000016)
-
-[node name="weaponcdtimer" type="Timer" parent="." unique_id=38606092]
-
-[node name="activeweaponattacktimer" type="Timer" parent="." unique_id=168137622]
+[node name="Timer" type="Timer" parent="." unique_id=1206928960]
 
 [connection signal="body_entered" from="." to="." method="_enemy_in_range"]
-[connection signal="body_exited" from="." to="." method="_enemy_out_range"]
-[connection signal="timeout" from="activeweaponattacktimer" to="." method="_attack_timer"]
+[connection signal="timeout" from="Timer" to="." method="_is_attack"]

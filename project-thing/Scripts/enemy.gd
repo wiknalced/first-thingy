@@ -15,13 +15,7 @@ func _process(_delta: float) -> void:
 		look_at(player.global_position)
 		velocity = Vector2(1,0).rotated(rotation) * speed
 		move_and_slide()
-		
-func take_damage() -> void:
-	if health > 1:
-		health -= 1
-	else:
-		queue_free()
 
-func _damage_player(body:CharacterBody2D) -> void:
+func _damage_player(body: Node2D) -> void:
 	if body == player:
 		player.take_damage()
