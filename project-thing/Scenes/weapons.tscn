@@ -23,6 +23,7 @@ position = Vector2(12.44967, -22.106407)
 shape = SubResource("RectangleShape2D_b8fjl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1206928960]
+wait_time = 5.2700000000000005
 
 [connection signal="body_entered" from="." to="." method="_enemy_in_range"]
 [connection signal="timeout" from="Timer" to="." method="_is_attack"]

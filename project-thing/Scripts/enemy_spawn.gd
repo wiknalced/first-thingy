@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var enemy_spawn_timer : Timer
 @export var spawn_point : PathFollow2D
 @export var enemy_scene : PackedScene
 # Called when the node enters the scene tree for the first time.
@@ -14,5 +15,9 @@ func _spawn_enemy() -> void:
 	var enemy= enemy_scene.instantiate()
 	add_child(enemy)
 	enemy.global_position = spawn_point.global_position
+	
+func _enemy_timer() -> void:
+	_spawn_enemy()
+	enemy_spawn_timer.start()
 	
 	

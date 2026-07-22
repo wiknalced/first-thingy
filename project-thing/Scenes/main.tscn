@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d370rh7k3t37r" path="res://Assets/health ui background.png" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://r6cl438pj1ay" path="res://Assets/actual floor.png" id="2_kry3j"]
 [ext_resource type="Texture2D" uid="uid://0jfmw4dsrpfp" path="res://Assets/walls.png" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
@@ -75,11 +76,15 @@ position = Vector2(1194, 393)
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(575, 387)
+position = Vector2(576, 422)
 scale = Vector2(1.5200012, 1.5200012)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 0.001
+
+[node name="StaticBody2D5" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
+position = Vector2(577, 551)
+scale = Vector2(4.8813806, 3.7076464)
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]

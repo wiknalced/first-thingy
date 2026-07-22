@@ -4,7 +4,7 @@ var is_attacking : bool = false
 var enemy = CharacterBody2D
 
 @export var is_attack : Timer
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	pass
 		
@@ -13,6 +13,8 @@ func _process(delta) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		is_attacking = true
 		is_attack.start()
+	if is_attacking == false:
+		queue_free()
 		
 	
 func _damage_enemy(body: CharacterBody2D) -> void:

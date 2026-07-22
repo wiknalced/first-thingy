@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bc3tm7qv2cnos"]
+
+[ext_resource type="Script" uid="uid://b1g4ram63lpw3" path="res://Scripts/mound.gd" id="1_mhu1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw36b"]
+size = Vector2(20, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_285gn"]
+size = Vector2(20, 28)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1577767400]
+script = ExtResource("1_mhu1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213783226]
+shape = SubResource("RectangleShape2D_vw36b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1491160782 groups=["mound"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2110709335]
+shape = SubResource("RectangleShape2D_285gn")

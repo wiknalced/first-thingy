@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var enemy = CharacterBody2D
+var enemy = Area2D
 var speed: float = 300
 var health: int = 5
 var can_attack : bool = true
@@ -9,8 +9,6 @@ var can_attack : bool = true
 @export var attack_spawn : Marker2D
 @export var weapons_scene : PackedScene
 @export var attack_timer : Timer
-
-
 
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("enemy"):
@@ -35,7 +33,7 @@ func take_damage() -> void:
 
 func _attack() -> void:
 	var weapon = weapons_scene.instantiate()
-	weapon.rotation = pivot.rotation
+	weapon.rotation = pivot.global_rotation
 	weapon.global_position = attack_spawn.global_position
 	add_sibling(weapon)
 	can_attack = false
@@ -43,3 +41,7 @@ func _attack() -> void:
 	
 func _attack_cd() -> void:
 	can_attack = true
+
+func _hit_something(area: Area2D) -> void:
+	take_damage()
+	
