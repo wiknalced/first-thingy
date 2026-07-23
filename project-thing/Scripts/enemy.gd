@@ -31,15 +31,16 @@ func _process(_delta: float) -> void:
 
 func _entered_area(area: Area2D) -> void:
 	if area.is_in_group("mound"):
-		print("hi")
-		queue_free()
+		call_deferred("queue_free")
+	if area.is_in_group("player_detect"):
+		call_deferred("queue_free")
 
 func _detect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = true
-		print("bye")
 		
 
-
 func _nodetect(area: Area2D) -> void:
-	detect = false
+	if area.is_in_group("player_detect"):
+		detect = false
+		print("bye")

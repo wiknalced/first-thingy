@@ -43,5 +43,8 @@ func _attack_cd() -> void:
 	can_attack = true
 
 func _hit_something(area: Area2D) -> void:
-	take_damage()
+	if area.is_in_group("enemy"):
+		take_damage()
+		
+	
 	
