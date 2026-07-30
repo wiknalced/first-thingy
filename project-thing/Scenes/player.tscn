@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d35ltgd011pee" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://tw1d135t4ugu" path="res://Scenes/weapons.tscn" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
 radius = 14.0
@@ -16,7 +15,6 @@ height = 56.0
 script = ExtResource("1_v0iea")
 pivot = NodePath("Node2D")
 attack_spawn = NodePath("Node2D/Marker2D")
-weapons_scene = ExtResource("2_cvnsp")
 attack_timer = NodePath("AttackCD")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1396314781]

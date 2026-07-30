@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cavgbjyvvcwrq"]
+
+[ext_resource type="PackedScene" uid="uid://cyhdt6dy1s166" path="res://Scenes/enemy.tscn" id="1_6skfv"]
+[ext_resource type="Script" uid="uid://b8uyil0ltk1" path="res://Scripts/tank_enemy.gd" id="2_6swbc"]
+
+[node name="CharacterBody2D" unique_id=1529862797 instance=ExtResource("1_6skfv")]
+script = ExtResource("2_6swbc")

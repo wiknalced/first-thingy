@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed: float = 150.0
 var player: Area2D
 var mound : Area2D
-var health: int = 2
+var health: int = 3
 var can_damage = true
 var detect = false
 
@@ -33,7 +33,7 @@ func _entered_area(area: Area2D) -> void:
 	if area.is_in_group("mound"):
 		call_deferred("queue_free")
 	if area.is_in_group("player_detect"):
-		call_deferred("queue_free")
+		take_damage()
 
 func _detect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
@@ -43,3 +43,10 @@ func _detect(area: Area2D) -> void:
 func _nodetect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = false
+
+func take_damage() -> void:
+	if health > 1:
+		health -= 1
+		print(health)
+	else: 
+		call_deferred("queue_free")
