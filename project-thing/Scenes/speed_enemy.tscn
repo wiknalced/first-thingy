@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cyhdt6dy1s166"]
+[gd_scene format=3 uid="uid://cbgnp3oght830"]
 
-[ext_resource type="Script" uid="uid://ddne4or65bvi2" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://ddne4or65bvi2" path="res://Scripts/enemy.gd" id="1_ic2ux"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
 
@@ -11,7 +11,7 @@ radius = 11.0
 radius = 100.28459
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1529862797 node_paths=PackedStringArray("cooldown") groups=["enemy"]]
-script = ExtResource("1_hghv2")
+script = ExtResource("1_ic2ux")
 cooldown = NodePath("DamageCooldown")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
@@ -35,11 +35,8 @@ shape = SubResource("CapsuleShape2D_hghv2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=85443053]
 shape = SubResource("CircleShape2D_hghv2")
 
-[node name="Timer" type="Timer" parent="." unique_id=987897364]
-
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
 [connection signal="body_entered" from="Area2D" to="." method="_damage_player"]
 [connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]
 [connection signal="area_entered" from="Area2D2" to="." method="_detect"]
 [connection signal="area_exited" from="Area2D2" to="." method="_nodetect"]
-[connection signal="timeout" from="Timer" to="." method="_survival"]

@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-var speed: float = 150.0
+var speed = 100
 var player: Area2D
 var mound : Area2D
 var health: int = 2
 var can_damage = true
 var detect = false
+var timer_amount : float = 3
 
 @export var cooldown : Timer
+@onready var enemy_survive : Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,18 +17,18 @@ func _ready() -> void:
 		player = node
 	for node in get_tree().get_nodes_in_group("mound"):
 		mound = node
+	enemy_survive.start(timer_amount)
+	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if detect == true:
 		look_at(player.global_position)
-		velocity = Vector2(1,0).rotated(rotation) * speed
-		move_and_slide()
 	if detect == false:
 		look_at(mound.global_position)
-		velocity = Vector2(1,0).rotated(rotation) * speed
-		move_and_slide()
+	velocity = Vector2(1,0).rotated(rotation) * speed
+	move_and_slide()
 
 
 func _entered_area(area: Area2D) -> void:
@@ -43,3 +45,7 @@ func _detect(area: Area2D) -> void:
 func _nodetect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = false
+
+
+func _survival() -> void:
+	call_deferred("queue_free")

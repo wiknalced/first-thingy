@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0tokyt2pbiui" path="res://Scripts/enemy_spawn.gd" id="1_g5vkx"]
 [ext_resource type="PackedScene" uid="uid://cyhdt6dy1s166" path="res://Scenes/enemy.tscn" id="2_um0s4"]
+[ext_resource type="PackedScene" uid="uid://6uf4ci1ukcy5" path="res://Scenes/tank_enemy.tscn" id="3_1fae2"]
 
 [sub_resource type="Curve2D" id="Curve2D_um0s4"]
 
@@ -12,7 +13,8 @@ size = Vector2(101, 20)
 script = ExtResource("1_g5vkx")
 enemy_spawn_timer = NodePath("Timer")
 spawn_point = NodePath("Path2D/PathFollow2D")
-enemy_scene = ExtResource("2_um0s4")
+basic_scene = ExtResource("2_um0s4")
+tank_scene = ExtResource("3_1fae2")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1998236403]
 position = Vector2(-1.9073486e-06, 0)

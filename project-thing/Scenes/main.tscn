@@ -76,7 +76,7 @@ position = Vector2(1194, 393)
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(576, 422)
+position = Vector2(570, 484.00003)
 scale = Vector2(1.5200012, 1.5200012)
 slide_on_ceiling = false
 floor_stop_on_slope = false
@@ -84,7 +84,7 @@ floor_block_on_wall = false
 safe_margin = 0.001
 
 [node name="StaticBody2D5" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
-position = Vector2(577, 551)
+position = Vector2(575.99994, 600)
 scale = Vector2(4.8813806, 3.7076464)
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]

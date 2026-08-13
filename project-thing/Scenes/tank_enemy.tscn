@@ -1,7 +1,44 @@
-[gd_scene format=3 uid="uid://cavgbjyvvcwrq"]
+[gd_scene format=3 uid="uid://6uf4ci1ukcy5"]
 
-[ext_resource type="PackedScene" uid="uid://cyhdt6dy1s166" path="res://Scenes/enemy.tscn" id="1_6skfv"]
-[ext_resource type="Script" uid="uid://b8uyil0ltk1" path="res://Scripts/tank_enemy.gd" id="2_6swbc"]
+[ext_resource type="Script" uid="uid://bypwb2mpadx82" path="res://Scripts/tank_enemy.gd" id="1_6skfv"]
 
-[node name="CharacterBody2D" unique_id=1529862797 instance=ExtResource("1_6skfv")]
-script = ExtResource("2_6swbc")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6skfv"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6skfv"]
+radius = 193.01036
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797 node_paths=PackedStringArray("cooldown") groups=["enemy"]]
+script = ExtResource("1_6skfv")
+cooldown = NodePath("DamageCooldown")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286412455]
+shape = SubResource("CapsuleShape2D_aftqw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=376927211 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1510467915]
+shape = SubResource("CapsuleShape2D_6skfv")
+
+[node name="DamageCooldown" type="Timer" parent="." unique_id=1445790060]
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=11080990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=85443053]
+shape = SubResource("CircleShape2D_6skfv")
+
+[node name="Timer" type="Timer" parent="." unique_id=1624832000]
+
+[connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
+[connection signal="body_entered" from="Area2D" to="." method="_damage_player"]
+[connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]
+[connection signal="area_entered" from="Area2D2" to="." method="_detect"]
+[connection signal="area_exited" from="Area2D2" to="." method="_nodetect"]
