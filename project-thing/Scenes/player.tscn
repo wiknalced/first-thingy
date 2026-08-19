@@ -8,14 +8,14 @@ radius = 14.0
 height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
-radius = 16.0
-height = 56.0
+radius = 19.0
+height = 66.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1743508133 node_paths=PackedStringArray("pivot", "attack_spawn", "attack_timer")]
 script = ExtResource("1_v0iea")
 pivot = NodePath("Node2D")
 attack_spawn = NodePath("Node2D/Marker2D")
-attack_timer = NodePath("AttackCD")
+attack_timer = NodePath("")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1396314781]
 position = Vector2(-9.536743e-07, -3.999998)
@@ -34,13 +34,9 @@ scale = Vector2(-0.40190536, 1)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1706529585]
 position = Vector2(-13, -19)
 
-[node name="AttackCD" type="Timer" parent="." unique_id=262864144]
-one_shot = true
-
 [node name="Area2D" type="Area2D" parent="." unique_id=829387473 groups=["player_detect"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1172778945]
 shape = SubResource("CapsuleShape2D_vgqql")
 
-[connection signal="timeout" from="AttackCD" to="." method="_attack_cd"]
 [connection signal="area_entered" from="Area2D" to="." method="_hit_something"]

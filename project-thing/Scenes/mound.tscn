@@ -19,4 +19,6 @@ shape = SubResource("RectangleShape2D_vw36b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2110709335]
 shape = SubResource("RectangleShape2D_285gn")
 
+[node name="Timer" type="Timer" parent="." unique_id=1504165750]
+
 [connection signal="area_shape_entered" from="Area2D" to="." method="_hit"]

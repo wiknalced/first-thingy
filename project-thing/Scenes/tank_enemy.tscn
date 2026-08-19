@@ -38,7 +38,7 @@ shape = SubResource("CircleShape2D_6skfv")
 [node name="Timer" type="Timer" parent="." unique_id=1624832000]
 
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
-[connection signal="body_entered" from="Area2D" to="." method="_damage_player"]
 [connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]
 [connection signal="area_entered" from="Area2D2" to="." method="_detect"]
 [connection signal="area_exited" from="Area2D2" to="." method="_nodetect"]
+[connection signal="timeout" from="Timer" to="." method="_survival"]

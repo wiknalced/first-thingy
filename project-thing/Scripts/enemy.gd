@@ -6,7 +6,7 @@ var mound : Area2D
 var health: int = 2
 var can_damage = true
 var detect = false
-var timer_amount : float = 3
+var timer_amount : float = 5
 
 @export var cooldown : Timer
 @onready var enemy_survive : Timer = $Timer
@@ -32,9 +32,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _entered_area(area: Area2D) -> void:
-	if area.is_in_group("mound"):
-		call_deferred("queue_free")
-	if area.is_in_group("player_detect"):
+	if area.is_in_group("mound") or area.is_in_group("player_detect"):
 		call_deferred("queue_free")
 
 func _detect(area: Area2D) -> void:
@@ -45,7 +43,6 @@ func _detect(area: Area2D) -> void:
 func _nodetect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = false
-
 
 func _survival() -> void:
 	call_deferred("queue_free")

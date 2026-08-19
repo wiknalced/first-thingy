@@ -20,9 +20,10 @@ size = Vector2(108, 576.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(1161, 55)
 
-[node name="Node2D" type="Node2D" unique_id=1114766402 node_paths=PackedStringArray("enemy_spawn", "enemy_spawn_timer")]
+[node name="Node2D" type="Node2D" unique_id=1114766402 node_paths=PackedStringArray("enemy_spawn_1", "enemy_spawn_2", "enemy_spawn_timer")]
 script = ExtResource("1_8gbba")
-enemy_spawn = NodePath("StaticBody2D")
+enemy_spawn_1 = NodePath("StaticBody2D")
+enemy_spawn_2 = NodePath("StaticBody2D3")
 enemy_spawn_timer = NodePath("Timer")
 
 [node name="ActualFloor" type="Sprite2D" parent="." unique_id=1018971350]
@@ -64,15 +65,10 @@ position = Vector2(575, 681)
 shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="StaticBody2D" parent="." unique_id=402275816 instance=ExtResource("2_bo1nx")]
-position = Vector2(573, 196)
-
-[node name="StaticBody2D3" parent="." unique_id=96604690 instance=ExtResource("2_bo1nx")]
-position = Vector2(-45, 390)
-
-[node name="StaticBody2D4" parent="." unique_id=707452505 instance=ExtResource("2_bo1nx")]
-position = Vector2(1194, 393)
+position = Vector2(221, 196)
 
 [node name="Timer" type="Timer" parent="." unique_id=832517963]
+wait_time = 1.75
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
@@ -86,5 +82,8 @@ safe_margin = 0.001
 [node name="StaticBody2D5" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
 position = Vector2(575.99994, 600)
 scale = Vector2(4.8813806, 3.7076464)
+
+[node name="StaticBody2D3" parent="." unique_id=841856656 instance=ExtResource("2_bo1nx")]
+position = Vector2(929, 199)
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
