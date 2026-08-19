@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2y0k5th8vqs"
-path="res://.godot/imported/board buttons component.png-fd22926cc930a09d4e0acef9dd117e52.ctex"
+uid="uid://bcp43ecixy56i"
+path="res://.godot/imported/coffee_bean.png-252f4c71a40db7228d7b96963a311566.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/board buttons component.png"
-dest_files=["res://.godot/imported/board buttons component.png-fd22926cc930a09d4e0acef9dd117e52.ctex"]
+source_file="res://Assets/coffee_bean.png"
+dest_files=["res://.godot/imported/coffee_bean.png-252f4c71a40db7228d7b96963a311566.ctex"]
 
 [params]
 

@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://cbgnp3oght830"]
 
 [ext_resource type="Script" uid="uid://deph4mn65t4bj" path="res://Scripts/speed_enemy.gd" id="1_ic2ux"]
+[ext_resource type="Texture2D" uid="uid://bcp43ecixy56i" path="res://Assets/coffee_bean.png" id="2_t2uob"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4otrw"]
+size = Vector2(32, 59)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
-radius = 11.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
-radius = 100.28459
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbasd"]
+size = Vector2(36, 57)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1529862797 node_paths=PackedStringArray("cooldown") groups=["enemy"]]
 script = ExtResource("1_ic2ux")
@@ -16,29 +15,20 @@ cooldown = NodePath("DamageCooldown")
 
 [node name="Timer" type="Timer" parent="." unique_id=15483222]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
-offset_left = -10.0
-offset_top = -15.0
-offset_right = 10.0
-offset_bottom = 15.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286412455]
-shape = SubResource("CapsuleShape2D_aftqw")
+shape = SubResource("RectangleShape2D_4otrw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=376927211 groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1510467915]
-shape = SubResource("CapsuleShape2D_hghv2")
+shape = SubResource("RectangleShape2D_sbasd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=172524604]
+rotation = -1.5707964
+texture = ExtResource("2_t2uob")
 
 [node name="DamageCooldown" type="Timer" parent="." unique_id=1445790060]
-
-[node name="Area2D2" type="Area2D" parent="." unique_id=11080990]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=85443053]
-shape = SubResource("CircleShape2D_hghv2")
 
 [connection signal="timeout" from="Timer" to="." method="_survival"]
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
 [connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]
-[connection signal="area_entered" from="Area2D2" to="." method="_detect"]
-[connection signal="area_exited" from="Area2D2" to="." method="_nodetect"]

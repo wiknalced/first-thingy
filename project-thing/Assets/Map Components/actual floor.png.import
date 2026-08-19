@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dggp2qdb867sp"
-path="res://.godot/imported/board buttons.png-b410db7266383cfcec41cb2f4bf1a6e3.ctex"
+uid="uid://r6cl438pj1ay"
+path="res://.godot/imported/actual floor.png-803df073d6eb3ce738cef3a1edaf85d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/board buttons.png"
-dest_files=["res://.godot/imported/board buttons.png-b410db7266383cfcec41cb2f4bf1a6e3.ctex"]
+source_file="res://Assets/Map Components/actual floor.png"
+dest_files=["res://.godot/imported/actual floor.png-803df073d6eb3ce738cef3a1edaf85d2.ctex"]
 
 [params]
 

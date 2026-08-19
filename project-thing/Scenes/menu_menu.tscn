@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://df7pe4qu4mcin"]
 
 [ext_resource type="Script" uid="uid://ct28pwdotray8" path="res://Scripts/main_menu.gd" id="1_nwjd5"]
-[ext_resource type="Texture2D" uid="uid://c2fw346g1xhi3" path="res://Assets/blurry floor.png" id="1_t8sph"]
-[ext_resource type="Texture2D" uid="uid://dggp2qdb867sp" path="res://Assets/board buttons.png" id="2_6gqac"]
-[ext_resource type="Texture2D" uid="uid://2y0k5th8vqs" path="res://Assets/board buttons component.png" id="2_8jtbs"]
-[ext_resource type="Texture2D" uid="uid://dhk8jat82v0qb" path="res://Assets/button.png" id="4_j42y7"]
+[ext_resource type="Texture2D" uid="uid://c2fw346g1xhi3" path="res://Assets/Map Components/blurry floor.png" id="1_t8sph"]
+[ext_resource type="Texture2D" uid="uid://dggp2qdb867sp" path="res://Assets/Map Components/board buttons.png" id="2_6gqac"]
+[ext_resource type="Texture2D" uid="uid://2y0k5th8vqs" path="res://Assets/Map Components/board buttons component.png" id="2_8jtbs"]
+[ext_resource type="Texture2D" uid="uid://dhk8jat82v0qb" path="res://Assets/Map Components/button.png" id="4_j42y7"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_j42y7"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_p5uw6"]
 

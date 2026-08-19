@@ -20,5 +20,7 @@ shape = SubResource("RectangleShape2D_vw36b")
 shape = SubResource("RectangleShape2D_285gn")
 
 [node name="Timer" type="Timer" parent="." unique_id=1504165750]
+wait_time = 3.0
+autostart = true
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_hit"]

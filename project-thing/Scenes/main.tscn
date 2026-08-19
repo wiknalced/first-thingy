@@ -4,15 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bcoiqnrkkcrdy" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b0s2c2bvkc100" path="res://Scenes/enemy_spawn.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://d370rh7k3t37r" path="res://Assets/health ui background.png" id="2_jjvhh"]
-[ext_resource type="Texture2D" uid="uid://r6cl438pj1ay" path="res://Assets/actual floor.png" id="2_kry3j"]
-[ext_resource type="Texture2D" uid="uid://0jfmw4dsrpfp" path="res://Assets/walls.png" id="4_21xkr"]
+[ext_resource type="Texture2D" uid="uid://r6cl438pj1ay" path="res://Assets/Map Components/actual floor.png" id="2_kry3j"]
+[ext_resource type="Texture2D" uid="uid://0jfmw4dsrpfp" path="res://Assets/Map Components/walls.png" id="4_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
-size = Vector2(1148.5, 142.5)
+size = Vector2(1148.5, 140.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
 size = Vector2(108, 576.75)
@@ -53,7 +53,7 @@ position = Vector2(-46, 325)
 shape = SubResource("RectangleShape2D_jjgbg")
 
 [node name="wall 2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1604245369]
-position = Vector2(588, 87)
+position = Vector2(571, 86)
 shape = SubResource("RectangleShape2D_bo1nx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1243889156]
@@ -72,7 +72,7 @@ wait_time = 1.75
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(570, 484.00003)
+position = Vector2(571, 613.00006)
 scale = Vector2(1.5200012, 1.5200012)
 slide_on_ceiling = false
 floor_stop_on_slope = false
@@ -80,10 +80,13 @@ floor_block_on_wall = false
 safe_margin = 0.001
 
 [node name="StaticBody2D5" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
-position = Vector2(575.99994, 600)
+position = Vector2(570, 515.00006)
 scale = Vector2(4.8813806, 3.7076464)
 
 [node name="StaticBody2D3" parent="." unique_id=841856656 instance=ExtResource("2_bo1nx")]
 position = Vector2(929, 199)
 
+[node name="Timer2" type="Timer" parent="." unique_id=1319038140]
+
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
+[connection signal="timeout" from="Timer2" to="." method="_generate"]

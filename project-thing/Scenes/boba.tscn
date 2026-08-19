@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://e330qujxkume"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nsakb"]
+
+[node name="Area2D" type="Area2D" unique_id=1719118792 groups=["collectible"]]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=197950166]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=565015570]
+shape = SubResource("CircleShape2D_nsakb")

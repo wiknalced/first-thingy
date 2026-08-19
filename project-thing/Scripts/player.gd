@@ -5,10 +5,6 @@ var speed: float = 300
 var health: int = 5
 var can_attack : bool = true
 
-@export var pivot : Node2D
-@export var attack_spawn : Marker2D
-@export var attack_timer : Timer
-
 func _ready() -> void:
 	pass
 func _process(_delta) -> void:

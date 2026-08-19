@@ -3,6 +3,8 @@ extends StaticBody2D
 var health : int = 10
 
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,3 +25,6 @@ func take_damage() -> void:
 		print(health)
 	else: 
 		get_tree().call_deferred("reload_current_scene")
+
+
+	
