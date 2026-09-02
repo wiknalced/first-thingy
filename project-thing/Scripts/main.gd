@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 func _enemy_timer() -> void:
 	if score < 10 and total_enemy < 20:
 		var spawn_number = randi_range(1,2)
+		print(spawn_number) #ALERT delete later
 		if spawn_number == 1:
 			enemy_spawn_1._spawn_enemy()
 		else:

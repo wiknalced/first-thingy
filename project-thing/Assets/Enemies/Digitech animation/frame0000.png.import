@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcp43ecixy56i"
-path="res://.godot/imported/coffee_bean.png-252f4c71a40db7228d7b96963a311566.ctex"
+uid="uid://da6oi2cgirwf7"
+path="res://.godot/imported/frame0000.png-bca9dd2bbf0f14e5a53074d3c98b722e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/coffee_bean.png"
-dest_files=["res://.godot/imported/coffee_bean.png-252f4c71a40db7228d7b96963a311566.ctex"]
+source_file="res://Assets/Enemies/Digitech animation/frame0000.png"
+dest_files=["res://.godot/imported/frame0000.png-bca9dd2bbf0f14e5a53074d3c98b722e.ctex"]
 
 [params]
 

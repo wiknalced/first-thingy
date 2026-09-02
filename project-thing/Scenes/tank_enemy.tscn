@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6uf4ci1ukcy5"]
 
 [ext_resource type="Script" uid="uid://bypwb2mpadx82" path="res://Scripts/tank_enemy.gd" id="1_6skfv"]
+[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="2_6swbc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
 
@@ -10,9 +11,12 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6skfv"]
 radius = 193.01036
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797 node_paths=PackedStringArray("cooldown") groups=["enemy"]]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpu2h"]
+shader = ExtResource("2_6swbc")
+shader_parameter/transparency = 0.5
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_6skfv")
-cooldown = NodePath("DamageCooldown")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
 offset_left = -10.0
@@ -36,6 +40,19 @@ shape = SubResource("CapsuleShape2D_6skfv")
 shape = SubResource("CircleShape2D_6skfv")
 
 [node name="Timer" type="Timer" parent="." unique_id=1624832000]
+
+[node name="Label" type="Label" parent="." unique_id=1695239949]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=502742492]
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1886263233]
+material = SubResource("ShaderMaterial_xpu2h")
+offset_left = -197.0
+offset_top = -199.0
+offset_right = 199.0
+offset_bottom = 198.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
 [connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]

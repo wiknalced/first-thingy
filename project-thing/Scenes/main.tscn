@@ -83,10 +83,10 @@ safe_margin = 0.001
 position = Vector2(570, 515.00006)
 scale = Vector2(4.8813806, 3.7076464)
 
-[node name="StaticBody2D3" parent="." unique_id=841856656 instance=ExtResource("2_bo1nx")]
-position = Vector2(929, 199)
-
 [node name="Timer2" type="Timer" parent="." unique_id=1319038140]
+
+[node name="StaticBody2D3" parent="." unique_id=1538765240 instance=ExtResource("2_bo1nx")]
+position = Vector2(934, 200)
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
 [connection signal="timeout" from="Timer2" to="." method="_generate"]

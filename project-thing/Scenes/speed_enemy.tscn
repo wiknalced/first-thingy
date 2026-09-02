@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://cbgnp3oght830"]
 
 [ext_resource type="Script" uid="uid://deph4mn65t4bj" path="res://Scripts/speed_enemy.gd" id="1_ic2ux"]
-[ext_resource type="Texture2D" uid="uid://bcp43ecixy56i" path="res://Assets/coffee_bean.png" id="2_t2uob"]
+[ext_resource type="Texture2D" uid="uid://bcp43ecixy56i" path="res://Assets/Enemies/coffee_bean.png" id="2_t2uob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2uob"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4otrw"]
-size = Vector2(32, 59)
+size = Vector2(32, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbasd"]
 size = Vector2(36, 57)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1529862797 node_paths=PackedStringArray("cooldown") groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_ic2ux")
-cooldown = NodePath("DamageCooldown")
+
+[node name="Label" type="Label" parent="." unique_id=1056704575]
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 55.0
+offset_bottom = 53.0
+rotation = -1.5707964
+label_settings = SubResource("LabelSettings_t2uob")
 
 [node name="Timer" type="Timer" parent="." unique_id=15483222]
+autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286412455]
 shape = SubResource("RectangleShape2D_4otrw")
@@ -27,8 +39,7 @@ shape = SubResource("RectangleShape2D_sbasd")
 rotation = -1.5707964
 texture = ExtResource("2_t2uob")
 
-[node name="DamageCooldown" type="Timer" parent="." unique_id=1445790060]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1415386368]
 
 [connection signal="timeout" from="Timer" to="." method="_survival"]
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
-[connection signal="timeout" from="DamageCooldown" to="." method="_damage_cooldown"]

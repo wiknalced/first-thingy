@@ -21,18 +21,19 @@ func _spawn_enemy() -> void:
 		var enemy= basic_scene.instantiate()
 		add_child(enemy)
 		enemy.global_position = spawn_point.global_position
+		
 	elif enemy_type == "Tank":
 		var tank = tank_scene.instantiate()
 		add_child(tank)
 		tank.global_position = spawn_point.global_position
+		
 	elif enemy_type == "Sole":
 		var sole = sole_scene.instantiate()
 		add_child(sole)
 		sole.global_position = spawn_point.global_position
+	print(enemy_type)
 	
-func _enemy_timer() -> void:
-	_spawn_enemy()
-	enemy_spawn_timer.start()
+
 	
 	
 	
