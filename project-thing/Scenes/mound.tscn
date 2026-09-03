@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bc3tm7qv2cnos"]
 
 [ext_resource type="Script" uid="uid://b1g4ram63lpw3" path="res://Scripts/mound.gd" id="1_mhu1f"]
+[ext_resource type="PackedScene" uid="uid://e330qujxkume" path="res://Scenes/boba.tscn" id="2_285gn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw36b"]
 size = Vector2(20, 28)
@@ -8,8 +9,15 @@ size = Vector2(20, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_285gn"]
 size = Vector2(20, 28)
 
+[sub_resource type="Curve2D" id="Curve2D_mhu1f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -23, -31, 0, 0, 0, 0, 24, -35, 0, 0, 0, 0, 24, 21, 0, 0, 0, 0, -24, 20, 0, 0, 0, 0, -23, -31)
+}
+point_count = 5
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1577767400]
 script = ExtResource("1_mhu1f")
+boba_scene = ExtResource("2_285gn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213783226]
 shape = SubResource("RectangleShape2D_vw36b")
@@ -23,4 +31,13 @@ shape = SubResource("RectangleShape2D_285gn")
 wait_time = 3.0
 autostart = true
 
+[node name="Path2D" type="Path2D" parent="." unique_id=813676310]
+position = Vector2(0, 6)
+curve = SubResource("Curve2D_mhu1f")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1630358112]
+position = Vector2(-23, -31)
+rotation = -0.084901795
+
 [connection signal="area_shape_entered" from="Area2D" to="." method="_hit"]
+[connection signal="timeout" from="Timer" to="." method="_production"]

@@ -2,8 +2,10 @@ extends StaticBody2D
 
 var health : int = 10
 
+@export var boba_scene : PackedScene
 
-
+@onready var path = $Path2D
+@onready var follow = $Path2D/PathFollow2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +21,8 @@ func _hit(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index:
 	if area.is_in_group("enemy"):
 		take_damage()
 
+
+
 func take_damage() -> void:
 	if health > 1:
 		health -= 1
@@ -27,4 +31,12 @@ func take_damage() -> void:
 		get_tree().call_deferred("reload_current_scene")
 
 
+	
+
+
+func _production() -> void:
+	var boba = boba_scene.instantiate()
+	follow.progress = randf() * path.curve.get_baked_length()
+	boba.global_position = follow.global_position
+	add_child(boba)
 	

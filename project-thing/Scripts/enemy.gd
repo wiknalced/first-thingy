@@ -47,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 		look_at(player.global_position)
 	if detect == false:
 		look_at(mound.global_position)
+
 	velocity = Vector2(1,0).rotated(rotation) * speed
 	move_and_slide()
 
@@ -59,7 +60,6 @@ func _detect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = true
 		
-
 func _nodetect(area: Area2D) -> void:
 	if area.is_in_group("player_detect"):
 		detect = false

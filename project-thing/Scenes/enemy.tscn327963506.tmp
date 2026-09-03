@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cyhdt6dy1s166"]
+
+[ext_resource type="Script" uid="uid://ddne4or65bvi2" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://da6oi2cgirwf7" path="res://Assets/Enemies/Digitech animation/frame0000.png" id="3_1dp5w"]
+[ext_resource type="Texture2D" uid="uid://3cvhxm8ttiah" path="res://Assets/Enemies/Digitech animation/frame0001.png" id="4_auwsv"]
+[ext_resource type="Texture2D" uid="uid://cfselaam2k80r" path="res://Assets/Enemies/Digitech animation/frame0002.png" id="5_8uf12"]
+[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="6_ghaa6"]
+[ext_resource type="Texture2D" uid="uid://b5anflw7dryl7" path="res://Assets/Enemies/Digitech animation/frame0003.png" id="6_po0sg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
+radius = 19.0
+height = 62.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
+radius = 20.0
+height = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
+radius = 117.01709
+
+[sub_resource type="LabelSettings" id="LabelSettings_hghv2"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hghv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1dp5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_auwsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8uf12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_po0sg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dp5w"]
+shader = ExtResource("6_ghaa6")
+shader_parameter/transparency = 0.5
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
+script = ExtResource("1_hghv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286412455]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_aftqw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=376927211 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1510467915]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_hghv2")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=11080990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=85443053]
+shape = SubResource("CircleShape2D_hghv2")
+
+[node name="Label" type="Label" parent="." unique_id=1897250366]
+offset_left = -18.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 44.0
+label_settings = SubResource("LabelSettings_hghv2")
+
+[node name="Timer" type="Timer" parent="." unique_id=987897364]
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=281953313]
+sprite_frames = SubResource("SpriteFrames_hghv2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2100437921]
+material = SubResource("ShaderMaterial_1dp5w")
+offset_left = -124.0
+offset_top = -122.0
+offset_right = 124.0
+offset_bottom = 123.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
+[connection signal="area_entered" from="Area2D2" to="." method="_detect"]
+[connection signal="area_exited" from="Area2D2" to="." method="_nodetect"]
+[connection signal="timeout" from="Timer" to="." method="_survival"]
