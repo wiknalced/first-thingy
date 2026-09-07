@@ -31,7 +31,7 @@ func _spawn_enemy() -> void:
 		var sole = sole_scene.instantiate()
 		add_child(sole)
 		sole.global_position = spawn_point.global_position
-	print(enemy_type)
+
 	
 
 	

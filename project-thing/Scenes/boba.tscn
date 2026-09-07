@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://e330qujxkume"]
 
+[ext_resource type="Script" uid="uid://h5a3anmbje7b" path="res://Scripts/boba.gd" id="1_bq0gr"]
 [ext_resource type="Texture2D" uid="uid://ykg6obwfv8f1" path="res://Assets/boba.png" id="1_u5pay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsakb"]
 
 [node name="Area2D" type="Area2D" unique_id=1719118792 groups=["collectible"]]
+script = ExtResource("1_bq0gr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=565015570]
 shape = SubResource("CircleShape2D_nsakb")
@@ -12,3 +14,5 @@ shape = SubResource("CircleShape2D_nsakb")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=789344657]
 position = Vector2(4.7683716e-07, 1.0000005)
 texture = ExtResource("1_u5pay")
+
+[connection signal="area_entered" from="." to="." method="_hit"]

@@ -25,6 +25,9 @@ func _attack_cd() -> void:
 func _hit_something(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		take_damage()
+		
+	if area.is_in_group("collectible"):
+		health += 1
 
 func take_damage() -> void:
 	if health > 1:

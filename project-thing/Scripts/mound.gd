@@ -31,12 +31,9 @@ func take_damage() -> void:
 		get_tree().call_deferred("reload_current_scene")
 
 
-	
-
-
 func _production() -> void:
 	var boba = boba_scene.instantiate()
 	follow.progress = randf() * path.curve.get_baked_length()
 	boba.global_position = follow.global_position
-	add_child(boba)
+	get_tree().current_scene.add_child(boba)
 	
