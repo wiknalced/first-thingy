@@ -1,6 +1,7 @@
 extends Control
 
 @onready var confirmation = $ConfirmationDialog
+@onready var tutorial_confirm = $TutorialBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,12 +12,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 	
-func _on_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn")
+func _play() -> void:
+	tutorial_confirm.popup()
 
 
 func _quit() -> void:
-	confirmation.popup_centered()
+	confirmation.popup()
 
 
 func _confirm() -> void:
@@ -24,3 +25,15 @@ func _confirm() -> void:
 
 func _unconfirm() -> void:
 	confirmation.hide()
+
+
+func _tutorial_confirm() -> void:
+	get_tree().call_deferred("change_scene_to_file",
+	"res://scenes/tutorial.tscn")
+
+
+func _tutorial_decline() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn")
+
+func _tutorial_close() -> void:
+	tutorial_confirm.hide()

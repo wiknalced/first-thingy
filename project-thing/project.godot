@@ -14,9 +14,9 @@ config/name="Project thing"
 run/main_scene="uid://df7pe4qu4mcin"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
-[display]
+[global]
 
-window/subwindows/embed_subwindows=false
+subwind=false
 
 [physics]
 

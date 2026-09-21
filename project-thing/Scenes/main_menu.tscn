@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://df7pe4qu4mcin"]
 
-[ext_resource type="Script" uid="uid://ct28pwdotray8" path="res://Scripts/main_menu.gd" id="1_nwjd5"]
-[ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="3_p5uw6"]
-[ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_j42y7"]
-[ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="5_jw2wm"]
-[ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_p5uw6"]
-[ext_resource type="Texture2D" uid="uid://c00174rg4fkqr" path="res://Assets/blurred background.png" id="7_nwjd5"]
+[ext_resource type="Script" uid="uid://ct28pwdotray8" path="res://Scripts/main_menu.gd" id="1_opfnp"]
+[ext_resource type="Texture2D" uid="uid://c00174rg4fkqr" path="res://Assets/blurred background.png" id="2_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="3_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_trj04"]
+[ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_16hvj"]
+[ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_vr1f0"]
 
 [sub_resource type="Image" id="Image_8jah3"]
 data = {
@@ -453,32 +453,17 @@ outline_size = 10
 outline_color = Color(0.5411765, 0.4392157, 0.16078432, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wp4j3"]
-atlas = ExtResource("5_jw2wm")
-
-[sub_resource type="GDScript" id="GDScript_jw2wm"]
-script/source = "extends TextureButton
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-	
-
-
-func _play() -> void:
-	get_tree().call_deferred(\"change_scene_to_file\", \"res://scenes/main.tscn\")
-	
-"
+atlas = ExtResource("4_trj04")
 
 [sub_resource type="LabelSettings" id="LabelSettings_p5uw6"]
-font = ExtResource("5_j42y7")
+font = ExtResource("5_16hvj")
 font_size = 55
 font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
 outline_size = 5
 outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
 
 [sub_resource type="Theme" id="Theme_jw2wm"]
-default_font = ExtResource("5_j42y7")
+default_font = ExtResource("5_16hvj")
 Window/styles/embedded_border = null
 Window/styles/embedded_unfocused_border = null
 
@@ -489,27 +474,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nwjd5")
+script = ExtResource("1_opfnp")
 
 [node name="BlurredBackground" type="Sprite2D" parent="." unique_id=1585770379]
-position = Vector2(580.6667, 322.625)
-scale = Vector2(0.28922224, 0.28922224)
-texture = ExtResource("7_nwjd5")
+position = Vector2(597.3334, 332)
+scale = Vector2(0.30222216, 0.3022222)
+texture = ExtResource("2_cp0ys")
 
 [node name="Chain 2" type="Sprite2D" parent="." unique_id=581229090]
 position = Vector2(520, 312)
 scale = Vector2(0.273, 0.273)
-texture = ExtResource("3_p5uw6")
+texture = ExtResource("3_yhxw7")
 
 [node name="Chain 1" type="Sprite2D" parent="." unique_id=87331686]
 position = Vector2(136, 312)
 scale = Vector2(0.2728572, 0.27285716)
-texture = ExtResource("3_p5uw6")
+texture = ExtResource("3_yhxw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004887071]
 position = Vector2(328, 120)
 scale = Vector2(0.43617022, 0.43617022)
-texture = ExtResource("5_jw2wm")
+texture = ExtResource("4_trj04")
 
 [node name="Label" type="Label" parent="." unique_id=1533965337]
 layout_mode = 0
@@ -537,7 +522,6 @@ alignment = 1
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=980903597]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_wp4j3")
-script = SubResource("GDScript_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton" unique_id=37644228]
 layout_mode = 0
@@ -551,7 +535,7 @@ label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=866414784]
 layout_mode = 2
-texture_normal = ExtResource("5_jw2wm")
+texture_normal = ExtResource("4_trj04")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton2" unique_id=1179006680]
 layout_mode = 0
@@ -565,7 +549,7 @@ label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton3" type="TextureButton" parent="VBoxContainer" unique_id=719649007]
 layout_mode = 2
-texture_normal = ExtResource("5_jw2wm")
+texture_normal = ExtResource("4_trj04")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton3" unique_id=1261549428]
 layout_mode = 0
@@ -579,7 +563,7 @@ label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton4" type="TextureButton" parent="VBoxContainer" unique_id=2065931796]
 layout_mode = 2
-texture_normal = ExtResource("5_jw2wm")
+texture_normal = ExtResource("4_trj04")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton4" unique_id=1586087394]
 layout_mode = 0
@@ -594,7 +578,15 @@ label_settings = SubResource("LabelSettings_p5uw6")
 [node name="Sprite" type="Sprite2D" parent="." unique_id=988604398]
 position = Vector2(852.7191, 318.625)
 scale = Vector2(6.34375, 6.34375)
-texture = ExtResource("6_p5uw6")
+texture = ExtResource("6_vr1f0")
+
+[node name="TutorialBox" type="ConfirmationDialog" parent="." unique_id=1455750570]
+oversampling_override = 1.0
+title = "Would you like to play the Tutorial?"
+initial_position = 1
+size = Vector2i(400, 100)
+ok_button_text = "Yes"
+cancel_button_text = "No"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=52161308]
 oversampling_override = 1.0
@@ -605,7 +597,10 @@ size = Vector2i(350, 100)
 theme = SubResource("Theme_jw2wm")
 ok_button_text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer/TextureButton" method="_play"]
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_play"]
 [connection signal="pressed" from="VBoxContainer/TextureButton4" to="." method="_quit"]
+[connection signal="canceled" from="TutorialBox" to="." method="_tutorial_decline"]
+[connection signal="close_requested" from="TutorialBox" to="." method="_tutorial_close"]
+[connection signal="confirmed" from="TutorialBox" to="." method="_tutorial_confirm"]
 [connection signal="canceled" from="ConfirmationDialog" to="." method="_unconfirm"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_confirm"]
