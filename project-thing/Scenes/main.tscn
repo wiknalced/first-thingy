@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://r6cl438pj1ay" path="res://Assets/Map Components/actual floor.png" id="2_kry3j"]
 [ext_resource type="Texture2D" uid="uid://0jfmw4dsrpfp" path="res://Assets/Map Components/walls.png" id="4_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
+[ext_resource type="Texture2D" uid="uid://cln4p42jfeyao" path="res://Assets/Map Components/Untitled_Artwork.png" id="8_344ge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
@@ -26,7 +27,13 @@ enemy_spawn_1 = NodePath("StaticBody2D")
 enemy_spawn_2 = NodePath("StaticBody2D3")
 enemy_spawn_timer = NodePath("Timer")
 
+[node name="UntitledArtwork" type="Sprite2D" parent="." unique_id=242437520]
+position = Vector2(583.6667, 328.24997)
+scale = Vector2(0.29133332, 0.29133332)
+texture = ExtResource("8_344ge")
+
 [node name="ActualFloor" type="Sprite2D" parent="." unique_id=1018971350]
+visible = false
 position = Vector2(577.5, 386.5)
 scale = Vector2(1.7828125, 1.5083333)
 texture = ExtResource("2_kry3j")
@@ -42,6 +49,7 @@ scale = Vector2(2.3838341, 2.3838341)
 texture_under = ExtResource("2_jjvhh")
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=2052556626]
+visible = false
 position = Vector2(576, 290)
 scale = Vector2(1.7796875, 1.5916667)
 texture = ExtResource("4_21xkr")
@@ -79,9 +87,9 @@ floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 0.001
 
-[node name="StaticBody2D5" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
-position = Vector2(588, 510)
-scale = Vector2(4.8813806, 3.7076464)
+[node name="StaticBody2D4" parent="." unique_id=1577767400 instance=ExtResource("7_6bp64")]
+position = Vector2(583.00006, 531.00006)
+scale = Vector2(3.719995, 3.719995)
 
 [node name="Timer2" type="Timer" parent="." unique_id=1319038140]
 

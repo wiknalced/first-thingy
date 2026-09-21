@@ -1,12 +1,11 @@
 [gd_scene format=4 uid="uid://df7pe4qu4mcin"]
 
 [ext_resource type="Script" uid="uid://ct28pwdotray8" path="res://Scripts/main_menu.gd" id="1_nwjd5"]
-[ext_resource type="Texture2D" uid="uid://c2fw346g1xhi3" path="res://Assets/Map Components/blurry floor.png" id="1_t8sph"]
-[ext_resource type="Texture2D" uid="uid://dggp2qdb867sp" path="res://Assets/Map Components/board buttons.png" id="2_6gqac"]
-[ext_resource type="Texture2D" uid="uid://2y0k5th8vqs" path="res://Assets/Map Components/board buttons component.png" id="2_8jtbs"]
-[ext_resource type="Texture2D" uid="uid://dhk8jat82v0qb" path="res://Assets/Map Components/button.png" id="4_j42y7"]
+[ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="3_p5uw6"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_j42y7"]
+[ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="5_jw2wm"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_p5uw6"]
+[ext_resource type="Texture2D" uid="uid://c00174rg4fkqr" path="res://Assets/blurred background.png" id="7_nwjd5"]
 
 [sub_resource type="Image" id="Image_8jah3"]
 data = {
@@ -448,10 +447,13 @@ cache/0/35/0/glyphs/74/texture_idx = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jw2wm"]
 font = SubResource("FontFile_nwjd5")
-font_size = 60
-font_color = Color(0.6117647, 0.35686275, 0, 1)
-outline_size = 20
-outline_color = Color(0.19215687, 0.12156863, 0, 1)
+font_size = 50
+font_color = Color(0.8039216, 0.6901961, 0.39215687, 1)
+outline_size = 10
+outline_color = Color(0.5411765, 0.4392157, 0.16078432, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp4j3"]
+atlas = ExtResource("5_jw2wm")
 
 [sub_resource type="GDScript" id="GDScript_jw2wm"]
 script/source = "extends TextureButton
@@ -470,9 +472,10 @@ func _play() -> void:
 
 [sub_resource type="LabelSettings" id="LabelSettings_p5uw6"]
 font = ExtResource("5_j42y7")
-font_color = Color(0.6117647, 0.35686275, 0, 1)
+font_size = 55
+font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
 outline_size = 5
-outline_color = Color(0.19215687, 0.12156863, 0, 1)
+outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
 
 [sub_resource type="Theme" id="Theme_jw2wm"]
 default_font = ExtResource("5_j42y7")
@@ -488,24 +491,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nwjd5")
 
-[node name="BlurryFloor" type="Sprite2D" parent="." unique_id=1120247758]
-position = Vector2(578.99994, 321.00003)
-scale = Vector2(1.7953125, 1.7916666)
-texture = ExtResource("1_t8sph")
+[node name="BlurredBackground" type="Sprite2D" parent="." unique_id=1585770379]
+position = Vector2(580.6667, 322.625)
+scale = Vector2(0.28922224, 0.28922224)
+texture = ExtResource("7_nwjd5")
 
-[node name="BoardButtonsComponent" type="Sprite2D" parent="." unique_id=1738185338]
-position = Vector2(291.71912, 336.52832)
-scale = Vector2(1.7887769, 1.9172039)
-texture = ExtResource("2_8jtbs")
-region_enabled = true
-region_rect = Rect2(0, 0, 353.14172, 360)
+[node name="Chain 2" type="Sprite2D" parent="." unique_id=581229090]
+position = Vector2(520, 312)
+scale = Vector2(0.273, 0.273)
+texture = ExtResource("3_p5uw6")
 
-[node name="BoardButtons" type="Sprite2D" parent="." unique_id=34841024]
-position = Vector2(327.71918, 122.62501)
-scale = Vector2(1.6686276, 1.8137255)
-texture = ExtResource("2_6gqac")
-region_enabled = true
-region_rect = Rect2(17.00185, 7.168312, 353.52777, 102.36085)
+[node name="Chain 1" type="Sprite2D" parent="." unique_id=87331686]
+position = Vector2(136, 312)
+scale = Vector2(0.2728572, 0.27285716)
+texture = ExtResource("3_p5uw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004887071]
+position = Vector2(328, 120)
+scale = Vector2(0.43617022, 0.43617022)
+texture = ExtResource("5_jw2wm")
 
 [node name="Label" type="Label" parent="." unique_id=1533965337]
 layout_mode = 0
@@ -522,67 +526,67 @@ autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1730525697]
 layout_mode = 0
-offset_left = 104.71915
-offset_top = 216.625
-offset_right = 458.71915
-offset_bottom = 678.6395
-scale = Vector2(1.25, 0.879)
+offset_left = 104.00001
+offset_top = 232.0
+offset_right = 1458.0
+offset_bottom = 956.0
+scale = Vector2(0.3299994, 0.23900002)
 theme_override_constants/separation = 10
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=980903597]
 layout_mode = 2
-texture_normal = ExtResource("4_j42y7")
+texture_normal = SubResource("AtlasTexture_wp4j3")
 script = SubResource("GDScript_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton" unique_id=37644228]
 layout_mode = 0
-offset_left = 124.224686
-offset_top = 16.353817
-offset_right = 164.22467
-offset_bottom = 39.353813
+offset_left = 484.8495
+offset_top = 66.945564
+offset_right = 609.8495
+offset_bottom = 136.55493
 scale = Vector2(2.8478823, 3.7758818)
 text = "Play"
 label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=866414784]
 layout_mode = 2
-texture_normal = ExtResource("4_j42y7")
+texture_normal = ExtResource("5_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton2" unique_id=1179006680]
 layout_mode = 0
-offset_left = 25.02468
-offset_top = 13.5324135
-offset_right = 130.02467
-offset_bottom = 36.532413
+offset_left = 169.69725
+offset_top = 49.14642
+offset_right = 528.69727
+offset_bottom = 118.7558
 scale = Vector2(2.8478823, 3.7758818)
 text = "How  to Play"
 label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton3" type="TextureButton" parent="VBoxContainer" unique_id=719649007]
 layout_mode = 2
-texture_normal = ExtResource("4_j42y7")
+texture_normal = ExtResource("5_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton3" unique_id=1261549428]
 layout_mode = 0
-offset_left = 82.62468
-offset_top = 18.278732
-offset_right = 148.62468
-offset_bottom = 41.278732
+offset_left = 339.39453
+offset_top = 64.82007
+offset_right = 565.39453
+offset_bottom = 134.42944
 scale = Vector2(2.8478823, 3.7758818)
 text = "Options"
 label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="TextureButton4" type="TextureButton" parent="VBoxContainer" unique_id=2065931796]
 layout_mode = 2
-texture_normal = ExtResource("4_j42y7")
+texture_normal = ExtResource("5_jw2wm")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton4" unique_id=1586087394]
 layout_mode = 0
-offset_left = 69.02468
-offset_top = 15.889709
-offset_right = 154.02469
-offset_bottom = 38.88971
+offset_left = 266.6671
+offset_top = 47.0207
+offset_right = 557.6671
+offset_bottom = 116.63007
 scale = Vector2(2.8478823, 3.7758818)
 text = "Exit Game"
 label_settings = SubResource("LabelSettings_p5uw6")

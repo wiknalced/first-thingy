@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b1g4ram63lpw3" path="res://Scripts/mound.gd" id="1_mhu1f"]
 [ext_resource type="PackedScene" uid="uid://e330qujxkume" path="res://Scenes/boba.tscn" id="2_285gn"]
+[ext_resource type="Texture2D" uid="uid://bqrl3vqjrgrpi" path="res://Assets/Enemies/Digitech animation/3FDBCA51-7A45-404C-8235-9B376AD45E7C.png" id="3_hyjo8"]
+[ext_resource type="Texture2D" uid="uid://dpgc82mt2n3i" path="res://Assets/Enemies/Digitech animation/9EE00CA4-5403-4D1E-8ACD-2B76D1BDD313.png" id="4_c5ro5"]
+[ext_resource type="Texture2D" uid="uid://dvsgyxecjpqrs" path="res://Assets/Enemies/Digitech animation/813C4167-FF25-4B34-8EFD-18C1B1EA4FEF.png" id="5_sm607"]
+[ext_resource type="Texture2D" uid="uid://isj4lfabqqkl" path="res://Assets/Enemies/Digitech animation/CCD91CE0-2B7E-4856-BA90-91A2B09D09D5.png" id="6_uqbn5"]
+[ext_resource type="Texture2D" uid="uid://dy3t6fj1oc3lw" path="res://Assets/Enemies/Digitech animation/E0586FF3-662E-45FA-9917-5ED4A75E910E.png" id="7_p8kfh"]
+[ext_resource type="Texture2D" uid="uid://b400ql0yt6pb" path="res://Assets/Enemies/Digitech animation/F2828D20-581D-4E24-9E7D-4923C76AD427.png" id="8_i6f3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw36b"]
-size = Vector2(20, 28)
+size = Vector2(20, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_285gn"]
-size = Vector2(20, 28)
+size = Vector2(20, 26)
 
 [sub_resource type="Curve2D" id="Curve2D_mhu1f"]
 _data = {
@@ -15,16 +21,44 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jwp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hyjo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5ro5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sm607")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uqbn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p8kfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i6f3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1577767400]
 script = ExtResource("1_mhu1f")
 boba_scene = ExtResource("2_285gn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213783226]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_vw36b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1491160782 groups=["mound"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2110709335]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_285gn")
 
 [node name="Timer" type="Timer" parent="." unique_id=1504165750]
@@ -38,6 +72,13 @@ curve = SubResource("Curve2D_mhu1f")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1630358112]
 position = Vector2(-23, -31)
 rotation = -0.084901795
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1653842236]
+position = Vector2(0, -10)
+scale = Vector2(0.2890625, 0.2890625)
+sprite_frames = SubResource("SpriteFrames_4jwp4")
+autoplay = "default"
+speed_scale = 1.25
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_hit"]
 [connection signal="timeout" from="Timer" to="." method="_production"]

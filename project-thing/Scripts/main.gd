@@ -4,6 +4,7 @@ extends Node2D
 @export var enemy_spawn_2 : StaticBody2D
 @export var enemy_spawn_timer: Timer
 @onready var generator_timer = $Timer2
+@onready var tutorial = $Window
 
 var total_enemy: int = 0
 var wave_counter : int = 0
@@ -12,12 +13,9 @@ var score : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
 	pass
 
 func _enemy_timer() -> void:
@@ -38,3 +36,8 @@ func _generate() -> void:
 		generator_timer.start()
 	else: 
 		print("next_wave")
+
+
+func _close_window() -> void:
+	tutorial.hide()
+	
