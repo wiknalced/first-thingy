@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csubee2lbyp04"]
 
+[ext_resource type="Script" uid="uid://m8jrf0bdp7o" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://bwtpijgakd5qy" path="res://Assets/Screenshot 2026-09-22 090637.png" id="1_ka2pi"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_feyax"]
 [ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="3_omtrn"]
@@ -17,8 +18,11 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 8.0
+offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i6t4g")
 
 [node name="Screenshot20260922090637" type="Sprite2D" parent="." unique_id=1519487060]
 position = Vector2(587.85046, 326.625)
@@ -27,10 +31,10 @@ texture = ExtResource("1_ka2pi")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1955636110]
 layout_mode = 0
-offset_left = 864.0
-offset_top = 464.0
-offset_right = 1128.0
-offset_bottom = 528.0
+offset_left = 860.0
+offset_top = 460.0
+offset_right = 1124.0
+offset_bottom = 524.0
 
 [node name="Layer10" type="Sprite2D" parent="TextureButton3" unique_id=372146491]
 position = Vector2(136, 32)
@@ -49,9 +53,9 @@ vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=781278322]
 layout_mode = 0
-offset_left = 856.0
+offset_left = 860.0
 offset_top = 560.0
-offset_right = 1120.0
+offset_right = 1124.0
 offset_bottom = 624.0
 
 [node name="Layer10" type="Sprite2D" parent="TextureButton" unique_id=129313187]
@@ -69,3 +73,8 @@ text = "Next ➜"
 label_settings = SubResource("LabelSettings_p8jf4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="TextureButton3" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton3" to="." method="_mouse_exit"]
+[connection signal="pressed" from="TextureButton3" to="." method="_skip_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_next_page"]
