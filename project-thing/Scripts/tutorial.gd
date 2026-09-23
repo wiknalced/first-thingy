@@ -1,8 +1,6 @@
 extends Control
 
-var page_2 = get_tree().call_deferred("change_scene_to_file", "res://scenes/tutorial_2.tscn"
-	)
-var page_3 = get_tree().call_deferred("")
+var next_page = "res://scenes/tutorial_2.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,4 +14,6 @@ func _skip_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn"
 	)
 func _next_page() -> void:
-	page_2
+	get_tree().call_deferred("change_scene_to_file", next_page
+	)
+	

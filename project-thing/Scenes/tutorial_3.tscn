@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dbpwxat38ufts"]
+
+[ext_resource type="Script" uid="uid://b67f374xurqdx" path="res://Scripts/tutorial_3.gd" id="1_0tok8"]
+[ext_resource type="Texture2D" uid="uid://cot0mkyrw34ge" path="res://Assets/Screenshot 2026-09-24 095012.png" id="2_0tok8"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_vm3w1"]
+[ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_30h3j"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="5_tx4xp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6t4g"]
+font = ExtResource("5_tx4xp")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8jf4"]
+font = ExtResource("5_tx4xp")
+font_size = 50
+
+[node name="Control" type="Control" unique_id=586607024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 160.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tok8")
+
+[node name="Screenshot20260922090637" type="Sprite2D" parent="." unique_id=1519487060]
+position = Vector2(583.1719, 164.00005)
+scale = Vector2(1.1731445, 1.1731449)
+texture = ExtResource("2_0tok8")
+
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=832530655]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 384.0
+offset_right = 296.0
+offset_bottom = 448.0
+pivot_offset = Vector2(132, 32)
+script = ExtResource("3_vm3w1")
+
+[node name="Layer10" type="Sprite2D" parent="TextureButton4" unique_id=835086825]
+position = Vector2(136, 32)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_30h3j")
+
+[node name="Label" type="Label" parent="TextureButton4" unique_id=870096327]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 224.0
+offset_bottom = 64.0
+text = "← Back"
+label_settings = SubResource("LabelSettings_i6t4g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=781278322]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 384.0
+offset_right = 1124.0
+offset_bottom = 448.0
+pivot_offset = Vector2(132, 32)
+script = ExtResource("3_vm3w1")
+
+[node name="Layer10" type="Sprite2D" parent="TextureButton" unique_id=129313187]
+position = Vector2(136, 32)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_30h3j")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=873675205]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -8.0
+offset_right = 233.0
+offset_bottom = 59.0
+text = "Play →"
+label_settings = SubResource("LabelSettings_p8jf4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="TextureButton4" to="TextureButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton4" to="TextureButton4" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton4" to="." method="_back_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_next_page"]
