@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwtpijgakd5qy" path="res://Assets/Screenshot 2026-09-22 090637.png" id="1_ka2pi"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_feyax"]
 [ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="3_omtrn"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_p8jf4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i6t4g"]
 font = ExtResource("3_omtrn")
@@ -35,6 +36,8 @@ offset_left = 860.0
 offset_top = 460.0
 offset_right = 1124.0
 offset_bottom = 524.0
+pivot_offset = Vector2(132, 32)
+script = ExtResource("3_p8jf4")
 
 [node name="Layer10" type="Sprite2D" parent="TextureButton3" unique_id=372146491]
 position = Vector2(136, 32)
@@ -57,6 +60,8 @@ offset_left = 860.0
 offset_top = 560.0
 offset_right = 1124.0
 offset_bottom = 624.0
+pivot_offset = Vector2(132, 32)
+script = ExtResource("3_p8jf4")
 
 [node name="Layer10" type="Sprite2D" parent="TextureButton" unique_id=129313187]
 position = Vector2(136, 32)
@@ -74,7 +79,9 @@ label_settings = SubResource("LabelSettings_p8jf4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="mouse_entered" from="TextureButton3" to="." method="_mouse_entered"]
-[connection signal="mouse_exited" from="TextureButton3" to="." method="_mouse_exit"]
+[connection signal="mouse_entered" from="TextureButton3" to="TextureButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton3" to="TextureButton3" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButton3" to="." method="_skip_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_next_page"]

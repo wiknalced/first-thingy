@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="3_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_trj04"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_16hvj"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_vr1f0"]
 
 [sub_resource type="Image" id="Image_8jah3"]
@@ -452,15 +453,15 @@ font_color = Color(0.8039216, 0.6901961, 0.39215687, 1)
 outline_size = 10
 outline_color = Color(0.5411765, 0.4392157, 0.16078432, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wp4j3"]
-atlas = ExtResource("4_trj04")
-
 [sub_resource type="LabelSettings" id="LabelSettings_p5uw6"]
 font = ExtResource("5_16hvj")
 font_size = 55
 font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
 outline_size = 5
 outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp4j3"]
+atlas = ExtResource("4_trj04")
 
 [sub_resource type="Theme" id="Theme_jw2wm"]
 default_font = ExtResource("5_16hvj")
@@ -509,35 +510,39 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1730525697]
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=2065931796]
 layout_mode = 0
-offset_left = 104.00001
-offset_top = 232.0
-offset_right = 1458.0
-offset_bottom = 956.0
-scale = Vector2(0.3299994, 0.23900002)
-theme_override_constants/separation = 10
-alignment = 1
+offset_left = -352.04996
+offset_top = 381.80005
+offset_right = 1001.9501
+offset_bottom = 757.80005
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(677, 188)
+texture_normal = ExtResource("4_trj04")
+script = ExtResource("5_yhxw7")
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=980903597]
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_wp4j3")
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton" unique_id=37644228]
+[node name="Label" type="Label" parent="TextureButton4" unique_id=1586087394]
 layout_mode = 0
-offset_left = 484.8495
-offset_top = 66.945564
-offset_right = 609.8495
-offset_bottom = 136.55493
+offset_left = 266.6671
+offset_top = 47.0207
+offset_right = 557.6671
+offset_bottom = 116.63007
 scale = Vector2(2.8478823, 3.7758818)
-text = "Play"
+text = "Exit Game"
 label_settings = SubResource("LabelSettings_p5uw6")
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=866414784]
-layout_mode = 2
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=866414784]
+layout_mode = 0
+offset_left = -352.04996
+offset_top = 229.80003
+offset_right = 1001.9501
+offset_bottom = 605.80005
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(677, 188)
 texture_normal = ExtResource("4_trj04")
+script = ExtResource("5_yhxw7")
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton2" unique_id=1179006680]
+[node name="Label" type="Label" parent="TextureButton2" unique_id=1179006680]
 layout_mode = 0
 offset_left = 169.69725
 offset_top = 49.14642
@@ -547,32 +552,25 @@ scale = Vector2(2.8478823, 3.7758818)
 text = "How  to Play"
 label_settings = SubResource("LabelSettings_p5uw6")
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer" unique_id=719649007]
-layout_mode = 2
-texture_normal = ExtResource("4_trj04")
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton3" unique_id=1261549428]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=980903597]
 layout_mode = 0
-offset_left = 339.39453
-offset_top = 64.82007
-offset_right = 565.39453
-offset_bottom = 134.42944
-scale = Vector2(2.8478823, 3.7758818)
-text = "Options"
-label_settings = SubResource("LabelSettings_p5uw6")
+offset_left = -352.04996
+offset_top = 85.80002
+offset_right = 1001.9501
+offset_bottom = 461.80002
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(677, 188)
+texture_normal = SubResource("AtlasTexture_wp4j3")
+script = ExtResource("5_yhxw7")
 
-[node name="TextureButton4" type="TextureButton" parent="VBoxContainer" unique_id=2065931796]
-layout_mode = 2
-texture_normal = ExtResource("4_trj04")
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton4" unique_id=1586087394]
+[node name="Label" type="Label" parent="TextureButton" unique_id=37644228]
 layout_mode = 0
-offset_left = 266.6671
-offset_top = 47.0207
-offset_right = 557.6671
-offset_bottom = 116.63007
+offset_left = 484.8495
+offset_top = 66.945564
+offset_right = 609.8495
+offset_bottom = 136.55493
 scale = Vector2(2.8478823, 3.7758818)
-text = "Exit Game"
+text = "Play"
 label_settings = SubResource("LabelSettings_p5uw6")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=988604398]
@@ -597,8 +595,14 @@ size = Vector2i(350, 100)
 theme = SubResource("Theme_jw2wm")
 ok_button_text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_play"]
-[connection signal="pressed" from="VBoxContainer/TextureButton4" to="." method="_quit"]
+[connection signal="mouse_entered" from="TextureButton4" to="TextureButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton4" to="TextureButton4" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton4" to="." method="_quit"]
+[connection signal="mouse_entered" from="TextureButton2" to="TextureButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton2" to="TextureButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_play"]
 [connection signal="canceled" from="TutorialBox" to="." method="_tutorial_decline"]
 [connection signal="close_requested" from="TutorialBox" to="." method="_tutorial_close"]
 [connection signal="confirmed" from="TutorialBox" to="." method="_tutorial_confirm"]
