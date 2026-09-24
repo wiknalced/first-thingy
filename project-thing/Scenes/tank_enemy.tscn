@@ -2,11 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bypwb2mpadx82" path="res://Scripts/tank_enemy.gd" id="1_6skfv"]
 [ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="2_6swbc"]
+[ext_resource type="Texture2D" uid="uid://bupgeff7f8vge" path="res://Assets/Enemies/tank enemy.png" id="2_a6ujq"]
+[ext_resource type="Texture2D" uid="uid://ciss57lpbvpmy" path="res://Assets/Enemies/Digitech animation/timer_frame0000.png" id="3_jes07"]
+[ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_1xpv5"]
+[ext_resource type="Texture2D" uid="uid://bstaq71070prp" path="res://Assets/Enemies/Digitech animation/timer_frame0002.png" id="5_5xltp"]
+[ext_resource type="Texture2D" uid="uid://ddk56xlox0th1" path="res://Assets/Enemies/Digitech animation/timer_frame0003.png" id="6_m3kkj"]
+[ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_prg4l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i828r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jes07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1xpv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5xltp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m3kkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_prg4l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
+radius = 54.0
+height = 116.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6skfv"]
-radius = 11.0
+radius = 55.0
+height = 116.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6skfv"]
 radius = 193.01036
@@ -17,6 +49,17 @@ shader_parameter/transparency = 0.5
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_6skfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1258976827]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+rotation = 1.5707964
+scale = Vector2(1.2342119, 1.2342119)
+texture = ExtResource("2_a6ujq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=502742492]
+position = Vector2(3.8146973e-06, -6.4117994)
+scale = Vector2(1.2230504, 1.2230504)
+sprite_frames = SubResource("SpriteFrames_i828r")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=241303400]
 offset_left = -10.0
@@ -44,8 +87,6 @@ shape = SubResource("CircleShape2D_6skfv")
 [node name="Label" type="Label" parent="." unique_id=1695239949]
 offset_right = 40.0
 offset_bottom = 23.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=502742492]
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1886263233]
 material = SubResource("ShaderMaterial_xpu2h")

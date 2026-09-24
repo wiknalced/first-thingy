@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://deph4mn65t4bj" path="res://Scripts/speed_enemy.gd" id="1_ic2ux"]
 [ext_resource type="Texture2D" uid="uid://bcp43ecixy56i" path="res://Assets/Enemies/coffee_bean.png" id="2_t2uob"]
+[ext_resource type="Texture2D" uid="uid://ciss57lpbvpmy" path="res://Assets/Enemies/Digitech animation/timer_frame0000.png" id="3_vspr6"]
+[ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_1bjwj"]
+[ext_resource type="Texture2D" uid="uid://bstaq71070prp" path="res://Assets/Enemies/Digitech animation/timer_frame0002.png" id="5_k1x8b"]
+[ext_resource type="Texture2D" uid="uid://ddk56xlox0th1" path="res://Assets/Enemies/Digitech animation/timer_frame0003.png" id="6_8jawj"]
+[ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_p8c2j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t2uob"]
 font_size = 24
@@ -12,6 +17,29 @@ size = Vector2(32, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbasd"]
 size = Vector2(36, 57)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba8xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vspr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1bjwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k1x8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8jawj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p8c2j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_ic2ux")
@@ -35,11 +63,14 @@ shape = SubResource("RectangleShape2D_4otrw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1510467915]
 shape = SubResource("RectangleShape2D_sbasd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=172524604]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=172524604]
 rotation = -1.5707964
 texture = ExtResource("2_t2uob")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1415386368]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1415386368]
+position = Vector2(-5.682481e-07, 13)
+scale = Vector2(1.068182, 1.068182)
+sprite_frames = SubResource("SpriteFrames_ba8xi")
 
 [connection signal="timeout" from="Timer" to="." method="_survival"]
 [connection signal="area_entered" from="Area2D" to="." method="_entered_area"]
