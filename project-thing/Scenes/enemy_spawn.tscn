@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cyhdt6dy1s166" path="res://Scenes/enemy.tscn" id="2_um0s4"]
 [ext_resource type="PackedScene" uid="uid://6uf4ci1ukcy5" path="res://Scenes/tank_enemy.tscn" id="3_1fae2"]
 [ext_resource type="PackedScene" uid="uid://cbgnp3oght830" path="res://Scenes/speed_enemy.tscn" id="4_od1gh"]
+[ext_resource type="Texture2D" uid="uid://bxm7on38jf8el" path="res://Assets/Layer_1 (1).png" id="5_6ahys"]
 
 [sub_resource type="Curve2D" id="Curve2D_um0s4"]
 
@@ -27,18 +28,15 @@ curve = SubResource("Curve2D_um0s4")
 position = Vector2(7.6293945e-06, 9.536743e-07)
 rotation = 2.0718098
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1007245577]
-offset_left = -51.0
-offset_top = -10.0
-offset_right = 50.0
-offset_bottom = 10.0
-color = Color(0.007843138, 1, 1, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1061861719]
 shape = SubResource("RectangleShape2D_goxce")
 disabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1439415748]
+
+[node name="Layer1(1)" type="Sprite2D" parent="." unique_id=286876509]
+position = Vector2(0, -48)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_6ahys")
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]

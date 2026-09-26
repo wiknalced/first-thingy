@@ -3,6 +3,9 @@ extends Control
 func _ready() -> void:
 	hide()
 
+func _process(delta):
+	inputEsc()
+
 func resume():
 	get_tree().paused = false
 	hide()
@@ -26,6 +29,7 @@ func _on_resume_box_pressed() -> void:
 
 
 func _on_restart_box_pressed() -> void:
+	resume()
 	get_tree().reload_current_scene()
 
 

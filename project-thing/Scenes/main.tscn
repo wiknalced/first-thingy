@@ -76,7 +76,7 @@ position = Vector2(575, 681)
 shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="StaticBody2D" parent="." unique_id=402275816 instance=ExtResource("2_bo1nx")]
-position = Vector2(221, 196)
+position = Vector2(216, 232)
 
 [node name="Timer" type="Timer" parent="." unique_id=832517963]
 wait_time = 1.75
@@ -97,11 +97,20 @@ scale = Vector2(3.719995, 3.719995)
 [node name="Timer2" type="Timer" parent="." unique_id=1319038140]
 
 [node name="StaticBody2D3" parent="." unique_id=1538765240 instance=ExtResource("2_bo1nx")]
-position = Vector2(934, 200)
+position = Vector2(936, 232)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1668404469]
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=514153861 instance=ExtResource("7_344ge")]
+offset_left = 416.0
+offset_top = 208.0
+offset_right = 416.0
+offset_bottom = 208.0
+scale = Vector2(0.25, 0.25)
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2" unique_id=602172723]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
 [connection signal="timeout" from="Timer2" to="." method="_generate"]

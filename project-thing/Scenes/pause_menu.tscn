@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://buqddi0g55ju4" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Texture2D" uid="uid://dbbw5wxu8s5ks" path="res://Scenes/Layer_10.png" id="2_1och7"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_1och7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
 font_size = 100
 
+[sub_resource type="LabelSettings" id="LabelSettings_k0w1u"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_1och7"]
+font_size = 100
+
 [node name="PauseMenu" type="Control" unique_id=514153861]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +36,7 @@ alignment = 1
 [node name="ResumeBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=353095735]
 layout_mode = 2
 texture_normal = ExtResource("2_1och7")
+script = ExtResource("3_1och7")
 
 [node name="Resume" type="Label" parent="PanelContainer/VBoxContainer/ResumeBox" unique_id=1403712565]
 layout_mode = 1
@@ -44,23 +53,41 @@ label_settings = SubResource("LabelSettings_bpi0q")
 [node name="RestartBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=1713204793]
 layout_mode = 2
 texture_normal = ExtResource("2_1och7")
+script = ExtResource("3_1och7")
 
 [node name="Restart" type="Label" parent="PanelContainer/VBoxContainer/RestartBox" unique_id=156544890]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 472.0
+offset_top = 116.0
+offset_right = 822.0
+offset_bottom = 253.0
 text = "Restart"
+label_settings = SubResource("LabelSettings_k0w1u")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="QuitBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=2084266286]
 layout_mode = 2
 texture_normal = ExtResource("2_1och7")
+script = ExtResource("3_1och7")
 
 [node name="Quit" type="Label" parent="PanelContainer/VBoxContainer/QuitBox" unique_id=150082939]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 544.0
+offset_top = 120.0
+offset_right = 754.0
+offset_bottom = 257.0
 text = "Quit"
+label_settings = SubResource("LabelSettings_1och7")
+horizontal_alignment = 1
+vertical_alignment = 1
 
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/ResumeBox" to="PanelContainer/VBoxContainer/ResumeBox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/VBoxContainer/ResumeBox" to="PanelContainer/VBoxContainer/ResumeBox" method="_on_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ResumeBox" to="." method="_on_resume_box_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/RestartBox" to="PanelContainer/VBoxContainer/RestartBox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/VBoxContainer/RestartBox" to="PanelContainer/VBoxContainer/RestartBox" method="_on_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/RestartBox" to="." method="_on_restart_box_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/QuitBox" to="PanelContainer/VBoxContainer/QuitBox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/VBoxContainer/QuitBox" to="PanelContainer/VBoxContainer/QuitBox" method="_on_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/QuitBox" to="." method="_on_quit_box_pressed"]
