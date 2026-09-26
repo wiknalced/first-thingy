@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bd4q6o75tlcpl"]
+
+[ext_resource type="Script" uid="uid://bj7ch7y60ylin" path="res://Scripts/finish_screens.gd" id="1_85imr"]
+[ext_resource type="Texture2D" uid="uid://bcb2260ssi5be" path="res://Assets/Screenshot 2026-09-27 015202.png" id="1_l5sol"]
+[ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="3_mf36t"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="4_pq638"]
+[ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_8snof"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rjdi"]
+font = ExtResource("5_8snof")
+font_size = 55
+font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
+outline_size = 5
+outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ufe8"]
+atlas = ExtResource("3_mf36t")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xl6h"]
+font = ExtResource("5_8snof")
+font_size = 55
+font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
+outline_size = 5
+outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
+
+[node name="Control" type="Control" unique_id=1674516976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_85imr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=368283316]
+position = Vector2(571.8926, 319.25)
+scale = Vector2(1.4262471, 1.4262472)
+texture = ExtResource("1_l5sol")
+
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=590134421]
+layout_mode = 0
+offset_left = -96.00004
+offset_top = 335.99997
+offset_right = 1258.0
+offset_bottom = 712.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(677, 188)
+texture_normal = ExtResource("3_mf36t")
+script = ExtResource("4_pq638")
+
+[node name="Label" type="Label" parent="TextureButton4" unique_id=1653168335]
+layout_mode = 0
+offset_left = 152.75362
+offset_top = 52.64527
+offset_right = 539.7536
+offset_bottom = 122.25465
+scale = Vector2(2.8478823, 3.7758818)
+text = "Return Home"
+label_settings = SubResource("LabelSettings_1rjdi")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=651361740]
+layout_mode = 0
+offset_left = -96.000046
+offset_top = 151.99998
+offset_right = 1258.0
+offset_bottom = 528.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(677, 188)
+texture_normal = SubResource("AtlasTexture_6ufe8")
+script = ExtResource("4_pq638")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=1299578409]
+layout_mode = 0
+offset_left = 228.42877
+offset_top = 39.42865
+offset_right = 525.4288
+offset_bottom = 109.038025
+scale = Vector2(2.8478823, 3.7758818)
+text = "Play again"
+label_settings = SubResource("LabelSettings_5xl6h")
+
+[connection signal="mouse_entered" from="TextureButton4" to="TextureButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton4" to="TextureButton4" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton4" to="." method="_return_home"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_play_again"]

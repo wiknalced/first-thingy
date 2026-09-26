@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbpwxat38ufts"]
 
 [ext_resource type="Script" path="res://Scripts/tutorial_3.gd" id="1_0tok8"]
-[ext_resource type="Texture2D" uid="uid://cot0mkyrw34ge" path="res://Assets/Screenshot 2026-09-24 095012.png" id="2_0tok8"]
+[ext_resource type="Texture2D" uid="uid://rl1hx4wjxkpn" path="res://Assets/Tutorial Assets/Screenshot 2026-09-27 014732.png" id="2_0tok8"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_vm3w1"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_30h3j"]
 [ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="5_tx4xp"]
@@ -26,8 +26,8 @@ grow_vertical = 2
 script = ExtResource("1_0tok8")
 
 [node name="Screenshot20260922090637" type="Sprite2D" parent="." unique_id=1519487060]
-position = Vector2(583.1719, 164.00005)
-scale = Vector2(1.1731445, 1.1731449)
+position = Vector2(571, 165)
+scale = Vector2(1.4267446, 1.4267452)
 texture = ExtResource("2_0tok8")
 
 [node name="TextureButton4" type="TextureButton" parent="." unique_id=832530655]

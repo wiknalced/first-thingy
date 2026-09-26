@@ -10,7 +10,7 @@ var health : int = 5
 var can_attack : bool = true
 
 const MAX_HEALTH = 5
-const MIN_HEALTH = 1
+const MIN_HEALTH = 0
 const DAMAGE = 1
 const HEAL = 1
 
@@ -31,7 +31,8 @@ func take_damage() -> void:
 		health -= DAMAGE
 		update_boba()
 	else: 
-		get_tree().call_deferred("reload_current_scene")
+		get_tree().call_deferred("change_scene_to_file", 
+	"res://scenes/death_screen.tscn")
 
 func _physics_process(_delta: float) -> void:
 	var direction : Vector2 = Vector2(0.0, 0.0)

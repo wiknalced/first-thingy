@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://isj4lfabqqkl" path="res://Assets/Enemies/Digitech animation/CCD91CE0-2B7E-4856-BA90-91A2B09D09D5.png" id="6_uqbn5"]
 [ext_resource type="Texture2D" uid="uid://dy3t6fj1oc3lw" path="res://Assets/Enemies/Digitech animation/E0586FF3-662E-45FA-9917-5ED4A75E910E.png" id="7_p8kfh"]
 [ext_resource type="Texture2D" uid="uid://b400ql0yt6pb" path="res://Assets/Enemies/Digitech animation/F2828D20-581D-4E24-9E7D-4923C76AD427.png" id="8_i6f3i"]
+[ext_resource type="Texture2D" uid="uid://ykg6obwfv8f1" path="res://Assets/boba.png" id="9_sm607"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="10_uqbn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw36b"]
 size = Vector2(20, 26)
@@ -47,6 +49,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sm607"]
+blend_mode = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8kfh"]
+font = ExtResource("10_uqbn5")
+font_size = 12
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1577767400]
 script = ExtResource("1_mhu1f")
 boba_scene = ExtResource("2_285gn")
@@ -79,6 +88,43 @@ scale = Vector2(0.2890625, 0.2890625)
 sprite_frames = SubResource("SpriteFrames_4jwp4")
 autoplay = "default"
 speed_scale = 1.25
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1077997651]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1175368396]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 51.0
+offset_right = -75.0
+offset_bottom = 91.0
+grow_horizontal = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=678003527]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_sm607")
+position = Vector2(17.599998, 17.6)
+scale = Vector2(3, 3)
+texture = ExtResource("9_sm607")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=2116184317]
+position = Vector2(17.599998, 17.6)
+scale = Vector2(3, 3)
+texture = ExtResource("9_sm607")
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Sprite2D" unique_id=329659648]
+anchors_preset = -1
+anchor_left = 0.85800004
+anchor_top = 0.317
+anchor_right = 0.85800004
+anchor_bottom = 0.317
+offset_left = -15.9893265
+offset_top = -16.010666
+offset_right = 35.944008
+offset_bottom = -5.966221
+label_settings = SubResource("LabelSettings_p8kfh")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_hit"]
 [connection signal="timeout" from="Timer" to="." method="_production"]

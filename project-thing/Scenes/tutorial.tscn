@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://csubee2lbyp04"]
 
-[ext_resource type="Script" uid="uid://m8jrf0bdp7o" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
-[ext_resource type="Texture2D" uid="uid://bwtpijgakd5qy" path="res://Assets/Screenshot 2026-09-22 090637.png" id="1_ka2pi"]
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_feyax"]
+[ext_resource type="Texture2D" uid="uid://c64v6p14l2c31" path="res://Assets/Tutorial Assets/Screenshot 2026-09-27 012206.png" id="2_p8jf4"]
 [ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="3_omtrn"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_p8jf4"]
 
@@ -26,16 +26,16 @@ grow_vertical = 2
 script = ExtResource("1_i6t4g")
 
 [node name="Screenshot20260922090637" type="Sprite2D" parent="." unique_id=1519487060]
-position = Vector2(587.85046, 326.625)
+position = Vector2(560.00006, 328)
 scale = Vector2(1.1222315, 1.1222317)
-texture = ExtResource("1_ka2pi")
+texture = ExtResource("2_p8jf4")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1955636110]
 layout_mode = 0
-offset_left = 860.0
-offset_top = 460.0
-offset_right = 1124.0
-offset_bottom = 524.0
+offset_left = 568.0
+offset_top = 560.0
+offset_right = 832.0
+offset_bottom = 624.0
 pivot_offset = Vector2(132, 32)
 script = ExtResource("3_p8jf4")
 
