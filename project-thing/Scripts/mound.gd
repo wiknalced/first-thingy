@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var health : int = 10
+var health : int = 3
 
 @export var boba_scene : PackedScene
 

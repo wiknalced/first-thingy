@@ -12,9 +12,9 @@ var third_frame_trigger : bool = false
 var fourth_frame_trigger: bool = false
 var fifth_frame_trigger : bool = false
 
-@onready var three_quarter : int  = 0
-@onready var half : int = 0
-@onready var quarter : int = 0
+@onready var three_quarter : float  = 0
+@onready var half : float = 0
+@onready var quarter : float = 0
 
 @onready var enemy_survive : Timer = $Timer
 @onready var animated_sprite : AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
@@ -24,9 +24,9 @@ func _ready() -> void:
 	animated_sprite.stop()
 	animated_sprite.frame = 0
 	
-	three_quarter = int(0.75 * timer_amount)
-	half = int(0.5 * timer_amount)
-	quarter = int(0.25 * timer_amount)
+	three_quarter = float(0.75 * timer_amount)
+	half = float(0.5 * timer_amount)
+	quarter = float(0.25 * timer_amount)
 	
 	for node in get_tree().get_nodes_in_group("player_detect"):
 		player = node
@@ -46,8 +46,6 @@ func _process(_delta:float)->void:
 	if not fourth_frame_trigger and time_remaining <= quarter:
 		animated_sprite.frame = 3
 		fourth_frame_trigger == true
-		
-		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:

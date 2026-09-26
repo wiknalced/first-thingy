@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cj2dmlx8pv07j"]
+
+[ext_resource type="Script" uid="uid://buqddi0g55ju4" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Texture2D" uid="uid://dbbw5wxu8s5ks" path="res://Scenes/Layer_10.png" id="2_1och7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
+font_size = 100
+
+[node name="PauseMenu" type="Control" unique_id=514153861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0w1u")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1678281786]
+process_mode = 3
+layout_mode = 0
+offset_right = 1354.0
+offset_bottom = 1136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2031594301]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=353095735]
+layout_mode = 2
+texture_normal = ExtResource("2_1och7")
+
+[node name="Resume" type="Label" parent="PanelContainer/VBoxContainer/ResumeBox" unique_id=1403712565]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.030000001
+anchor_bottom = 0.064
+offset_left = 472.0
+offset_top = 120.0
+offset_right = 818.38
+offset_bottom = 232.936
+text = "Resume"
+label_settings = SubResource("LabelSettings_bpi0q")
+
+[node name="RestartBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=1713204793]
+layout_mode = 2
+texture_normal = ExtResource("2_1och7")
+
+[node name="Restart" type="Label" parent="PanelContainer/VBoxContainer/RestartBox" unique_id=156544890]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Restart"
+
+[node name="QuitBox" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=2084266286]
+layout_mode = 2
+texture_normal = ExtResource("2_1och7")
+
+[node name="Quit" type="Label" parent="PanelContainer/VBoxContainer/QuitBox" unique_id=150082939]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ResumeBox" to="." method="_on_resume_box_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RestartBox" to="." method="_on_restart_box_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitBox" to="." method="_on_quit_box_pressed"]
