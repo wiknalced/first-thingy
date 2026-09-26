@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cj2dmlx8pv07j" path="res://Scenes/pause_menu.tscn" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://cln4p42jfeyao" path="res://Assets/Map Components/Untitled_Artwork.png" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="8_ynf5e"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21xkr"]
 
@@ -24,11 +25,15 @@ size = Vector2(108, 576.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(1161, 55)
 
-[node name="Node2D" type="Node2D" unique_id=1114766402 node_paths=PackedStringArray("enemy_spawn_1", "enemy_spawn_2", "enemy_spawn_timer")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
+bg_color = Color(0.00038751724, 0.00035865666, 0.00035865666, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1114766402 node_paths=PackedStringArray("enemy_spawn_1", "enemy_spawn_2", "enemy_spawn_timer", "pause_menu")]
 script = ExtResource("1_8gbba")
 enemy_spawn_1 = NodePath("StaticBody2D")
 enemy_spawn_2 = NodePath("StaticBody2D3")
 enemy_spawn_timer = NodePath("Timer")
+pause_menu = NodePath("CanvasLayer2/PauseMenu")
 
 [node name="UntitledArtwork" type="Sprite2D" parent="." unique_id=242437520]
 position = Vector2(583.6667, 328.24997)
@@ -108,9 +113,23 @@ offset_right = 416.0
 offset_bottom = 208.0
 scale = Vector2(0.25, 0.25)
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer2" unique_id=602172723]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Button" type="Button" parent="." unique_id=200413630]
+offset_left = 1072.0
+offset_top = 32.0
+offset_right = 1112.0
+offset_bottom = 104.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hptm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=16061044]
+position = Vector2(28.00002, 34.875)
+scale = Vector2(0.054, 0.031)
+texture = ExtResource("8_ynf5e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Button" unique_id=1090559411]
+position = Vector2(12.7500305, 34.875)
+scale = Vector2(0.054285716, 0.031)
+texture = ExtResource("8_ynf5e")
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
 [connection signal="timeout" from="Timer2" to="." method="_generate"]
+[connection signal="pressed" from="Button" to="." method="_pause_press"]

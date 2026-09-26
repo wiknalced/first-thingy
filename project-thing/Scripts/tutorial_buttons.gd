@@ -1,7 +1,5 @@
 extends TextureButton
 
-
-
 @onready var original_position : Vector2 = position
 @onready var original_scale : Vector2 = scale
 # Called when the node enters the scene tree for the first time.

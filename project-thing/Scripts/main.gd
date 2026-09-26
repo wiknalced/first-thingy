@@ -3,6 +3,7 @@ extends Node2D
 @export var enemy_spawn_1: StaticBody2D
 @export var enemy_spawn_2 : StaticBody2D
 @export var enemy_spawn_timer: Timer
+@export var pause_menu : Control
 @onready var generator_timer = $Timer2
 @onready var tutorial = $Window
 
@@ -41,3 +42,8 @@ func _generate() -> void:
 func _close_window() -> void:
 	tutorial.hide()
 	
+
+
+func _pause_press() -> void:
+	print("hi")
+	pause_menu.pause()

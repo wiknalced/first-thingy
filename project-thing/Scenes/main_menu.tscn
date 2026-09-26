@@ -512,10 +512,10 @@ autowrap_mode = 3
 
 [node name="TextureButton4" type="TextureButton" parent="." unique_id=2065931796]
 layout_mode = 0
-offset_left = -352.04996
-offset_top = 381.80005
-offset_right = 1001.9501
-offset_bottom = 757.80005
+offset_left = -352.00003
+offset_top = 312.0
+offset_right = 1002.0
+offset_bottom = 688.0
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(677, 188)
 texture_normal = ExtResource("4_trj04")
@@ -531,33 +531,12 @@ scale = Vector2(2.8478823, 3.7758818)
 text = "Exit Game"
 label_settings = SubResource("LabelSettings_p5uw6")
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=866414784]
-layout_mode = 0
-offset_left = -352.04996
-offset_top = 229.80003
-offset_right = 1001.9501
-offset_bottom = 605.80005
-scale = Vector2(0.35, 0.35)
-pivot_offset = Vector2(677, 188)
-texture_normal = ExtResource("4_trj04")
-script = ExtResource("5_yhxw7")
-
-[node name="Label" type="Label" parent="TextureButton2" unique_id=1179006680]
-layout_mode = 0
-offset_left = 169.69725
-offset_top = 49.14642
-offset_right = 528.69727
-offset_bottom = 118.7558
-scale = Vector2(2.8478823, 3.7758818)
-text = "How  to Play"
-label_settings = SubResource("LabelSettings_p5uw6")
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=980903597]
 layout_mode = 0
-offset_left = -352.04996
-offset_top = 85.80002
-offset_right = 1001.9501
-offset_bottom = 461.80002
+offset_left = -352.00003
+offset_top = 127.999985
+offset_right = 1002.0
+offset_bottom = 504.0
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(677, 188)
 texture_normal = SubResource("AtlasTexture_wp4j3")
@@ -598,9 +577,6 @@ ok_button_text = "Quit"
 [connection signal="mouse_entered" from="TextureButton4" to="TextureButton4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton4" to="TextureButton4" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButton4" to="." method="_quit"]
-[connection signal="mouse_entered" from="TextureButton2" to="TextureButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="TextureButton2" to="TextureButton2" method="_on_mouse_exited"]
-[connection signal="pressed" from="TextureButton2" to="." method="_tutorial_confirm"]
 [connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_play"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbbw5wxu8s5ks"
-path="res://.godot/imported/Layer_10.png-c1d423a83706a8617ea0518478a3bdf8.ctex"
+uid="uid://bbphndd5frkui"
+path="res://.godot/imported/Chains.png-eff6f721e2ef622dd3b88a65ca9e23a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Layer_10.png"
-dest_files=["res://.godot/imported/Layer_10.png-c1d423a83706a8617ea0518478a3bdf8.ctex"]
+source_file="res://Assets/Map Components/Chains.png"
+dest_files=["res://.godot/imported/Chains.png-eff6f721e2ef622dd3b88a65ca9e23a9.ctex"]
 
 [params]
 
