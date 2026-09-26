@@ -35,7 +35,14 @@ enemy_spawn_2 = NodePath("StaticBody2D3")
 enemy_spawn_timer = NodePath("Timer")
 pause_menu = NodePath("CanvasLayer2/PauseMenu")
 
-[node name="UntitledArtwork" type="Sprite2D" parent="." unique_id=242437520]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=371230795]
+
+[node name="HealthUiBackground" type="Sprite2D" parent="CanvasLayer" unique_id=833852129]
+position = Vector2(168, 64)
+scale = Vector2(2.8166668, 2.8166668)
+texture = ExtResource("2_jjvhh")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=242437520]
 position = Vector2(583.6667, 328.24997)
 scale = Vector2(0.29133332, 0.29133332)
 texture = ExtResource("8_344ge")
@@ -45,16 +52,6 @@ visible = false
 position = Vector2(577.5, 386.5)
 scale = Vector2(1.7828125, 1.5083333)
 texture = SubResource("CompressedTexture2D_21xkr")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1962257775]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=6973550]
-offset_left = 46.999996
-offset_top = -45.999996
-offset_right = 167.0
-offset_bottom = 74.0
-scale = Vector2(2.3838341, 2.3838341)
-texture_under = ExtResource("2_jjvhh")
 
 [node name="Walls" type="Sprite2D" parent="." unique_id=2052556626]
 visible = false
@@ -88,7 +85,7 @@ wait_time = 1.75
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]
-position = Vector2(588, 389)
+position = Vector2(512, 296)
 scale = Vector2(1.5200012, 1.5200012)
 slide_on_ceiling = false
 floor_stop_on_slope = false
@@ -107,6 +104,7 @@ position = Vector2(936, 232)
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1668404469]
 
 [node name="PauseMenu" parent="CanvasLayer2" unique_id=514153861 instance=ExtResource("7_344ge")]
+visible = false
 offset_left = 416.0
 offset_top = 208.0
 offset_right = 416.0

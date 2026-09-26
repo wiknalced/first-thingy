@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d35ltgd011pee" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://cmrqe4ej63ql0" path="res://Scenes/health_icon.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
 radius = 17.0
@@ -22,12 +23,60 @@ texture = ExtResource("2_6t5aa")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=679731118]
 shape = SubResource("CapsuleShape2D_6t5aa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1706529585]
-position = Vector2(-13, -19)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=829387473 groups=["player_detect"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1172778945]
 shape = SubResource("CapsuleShape2D_vgqql")
+
+[node name="Health" type="CanvasLayer" parent="." unique_id=1807260367]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Health" unique_id=1201580872]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Health/HBoxContainer" unique_id=1193472835]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Health/HBoxContainer/TextureRect" unique_id=417330032 instance=ExtResource("3_6t5aa")]
+position = Vector2(35, 8)
+scale = Vector2(2, 2)
+
+[node name="TextureRect2" type="TextureRect" parent="Health/HBoxContainer" unique_id=1761922457]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Health/HBoxContainer/TextureRect2" unique_id=901710519 instance=ExtResource("3_6t5aa")]
+position = Vector2(35, 8)
+scale = Vector2(2, 2)
+
+[node name="TextureRect3" type="TextureRect" parent="Health/HBoxContainer" unique_id=204826296]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Health/HBoxContainer/TextureRect3" unique_id=270587131 instance=ExtResource("3_6t5aa")]
+position = Vector2(35, 8)
+scale = Vector2(2, 2)
+
+[node name="TextureRect4" type="TextureRect" parent="Health/HBoxContainer" unique_id=1014567393]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Health/HBoxContainer/TextureRect4" unique_id=533804411 instance=ExtResource("3_6t5aa")]
+position = Vector2(35, 8)
+scale = Vector2(2, 2)
+
+[node name="TextureRect5" type="TextureRect" parent="Health/HBoxContainer" unique_id=1336255386]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Health/HBoxContainer/TextureRect5" unique_id=288563726 instance=ExtResource("3_6t5aa")]
+position = Vector2(35, 8)
+scale = Vector2(2, 2)
 
 [connection signal="area_entered" from="Area2D" to="." method="_hit_something"]

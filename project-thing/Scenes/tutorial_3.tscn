@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbpwxat38ufts"]
 
-[ext_resource type="Script" uid="uid://b67f374xurqdx" path="res://Scripts/tutorial_3.gd" id="1_0tok8"]
+[ext_resource type="Script" path="res://Scripts/tutorial_3.gd" id="1_0tok8"]
 [ext_resource type="Texture2D" uid="uid://cot0mkyrw34ge" path="res://Assets/Screenshot 2026-09-24 095012.png" id="2_0tok8"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_vm3w1"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_30h3j"]

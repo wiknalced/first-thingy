@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bcoiqnrkkcrdy"]
+
+[ext_resource type="Script" uid="uid://d35ltgd011pee" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dtssh2eb6t06" path="res://Scenes/health_icon.tscn" id="3_6t5aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
+radius = 17.0
+height = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
+radius = 18.0
+height = 58.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1743508133]
+script = ExtResource("1_v0iea")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1396314781]
+position = Vector2(-9.536743e-07, -3.999998)
+scale = Vector2(0.6916666, 0.6916666)
+texture = ExtResource("2_6t5aa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=679731118]
+shape = SubResource("CapsuleShape2D_6t5aa")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=829387473 groups=["player_detect"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1172778945]
+shape = SubResource("CapsuleShape2D_vgqql")
+
+[node name="Health" type="CanvasLayer" parent="." unique_id=1807260367]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Health" unique_id=1201580872]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Health/HBoxContainer" unique_id=990404549]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" parent="Health/HBoxContainer/TextureRect" unique_id=1749623978 instance=ExtResource("3_6t5aa")]
+
+[node name="TextureRect2" type="TextureRect" parent="Health/HBoxContainer" unique_id=2034078741]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" parent="Health/HBoxContainer/TextureRect2" unique_id=1250923535 instance=ExtResource("3_6t5aa")]
+
+[node name="TextureRect3" type="TextureRect" parent="Health/HBoxContainer" unique_id=183718563]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" parent="Health/HBoxContainer/TextureRect3" unique_id=403187473 instance=ExtResource("3_6t5aa")]
+
+[node name="TextureRect4" type="TextureRect" parent="Health/HBoxContainer" unique_id=403911319]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" parent="Health/HBoxContainer/TextureRect4" unique_id=772782039 instance=ExtResource("3_6t5aa")]
+
+[node name="TextureRect5" type="TextureRect" parent="Health/HBoxContainer" unique_id=1952067508]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Sprite2D" parent="Health/HBoxContainer/TextureRect5" unique_id=752623056 instance=ExtResource("3_6t5aa")]
+
+[connection signal="area_entered" from="Area2D" to="." method="_hit_something"]

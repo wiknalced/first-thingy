@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cmrqe4ej63ql0"]
+
+[ext_resource type="Texture2D" uid="uid://ykg6obwfv8f1" path="res://Assets/boba.png" id="1_4s0pq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4m8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4s0pq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=417330032]
+sprite_frames = SubResource("SpriteFrames_u4m8f")
