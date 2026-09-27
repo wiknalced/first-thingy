@@ -19,7 +19,7 @@ func _on_mouse_entered() -> void:
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(self, "position:y", original_position.y + TWEEN_OFFSET, TWEEN_DURATION)
 	tween.tween_property(self, "scale", original_scale * TWEEN_SCALE, TWEEN_DURATION)
-	tween.tween_property(self, "modulate", Color(0.8, 0.8, 0.8), TWEEN_DURATION )
+	tween.tween_property(self, "modulate", Color(0.8,0.8, 0.8), TWEEN_DURATION )
 
 
 # Makes button back to orginal when hovered mouse exits for visual feedback.
@@ -27,4 +27,4 @@ func _on_mouse_exited() -> void:
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(self, "position:y", original_position.y, TWEEN_DURATION)
 	tween.tween_property(self, "scale", original_scale, TWEEN_DURATION)
-	tween.tween_property(self, "modulate", Color(1, 1, 1), TWEEN_DURATION)
+	tween.tween_property(self, "modulate", Color(1,1, 1), TWEEN_DURATION)

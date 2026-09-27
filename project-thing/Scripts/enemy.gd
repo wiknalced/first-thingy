@@ -22,9 +22,9 @@ const ENEMY_GROUP = "enemy"
 const DELETION = "queue_free"
 
 
-const THREE_QUARTER_FRACTION = 0.75
-const HALF_FRACTION = 0.5
-const QUARTER_FRACTION = 0.25
+const THREE_QUARTER_FRACTION := 0.75
+const HALF_FRACTION := 0.5
+const QUARTER_FRACTION := 0.25
 
 const ORIGINAL_TIME_FRAME = 0
 const THREE_QUARTER_TIME_FRAME = 1
@@ -45,18 +45,18 @@ func _ready() -> void:
 	# Sets timer visual to default sprite.
 	timer_sprite.stop()
 	timer_sprite.frame = ORIGINAL_TIME_FRAME
-
+	
 	# Calculate fractional values of timer for later use.
 	three_quarter = float(THREE_QUARTER_FRACTION * timer_amount)
 	half = float(HALF_FRACTION * timer_amount)
 	quarter = float(QUARTER_FRACTION * timer_amount)
-
+	
 	# Find player and generator nodes from their groups
 	for node in get_tree().get_nodes_in_group(DETECTED_PLAYER_GROUP):
 		player = node
 	for node in get_tree().get_nodes_in_group(GENERATOR_GROUP):
 		generator = node
-
+	
 	# Start enemy survival timer
 	enemy_survive.start(timer_amount)
 

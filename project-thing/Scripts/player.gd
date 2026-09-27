@@ -58,13 +58,13 @@ func _hit_something(area: Area2D) -> void:
 	# Checks if area has hit an enemy and to take damage if it has
 	if area.is_in_group(ENEMY_GROUP):
 		take_damage()
-
+	
 	# Checks if area has hit a collectible item and to heal if it has
 	if area.is_in_group(COLLECTIBLES_GROUP):
 		if health <= MAX_HEALTH:
 			health += HEAL
 			update_boba()
-
+	
 	# Validity check for if area isn't in any of the top groups
 	else:
 		return
