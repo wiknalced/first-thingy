@@ -26,13 +26,16 @@ func _unconfirm() -> void:
 	confirmation.hide()
 
 
+# Change scene to tutorial when user wants to
 func _tutorial_confirm() -> void:
 	get_tree().call_deferred("change_scene_to_file", TUTORIAL_PAGE)
 
 
+# Go to game scene if tutorial prompt is declined
 func _tutorial_decline() -> void:
 	get_tree().call_deferred("change_scene_to_file", GAME_PAGE)
 
 
+# Go to game scene if tutorial prompt is declined
 func _tutorial_close() -> void:
-	tutorial_confirm.hide()
+	get_tree().call_deferred("change_scene_to_file", GAME_PAGE)

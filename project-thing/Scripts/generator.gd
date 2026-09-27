@@ -31,11 +31,20 @@ func _process(_delta: float) -> void:
 	if boba_produced >= MAX_BOBA:
 		get_tree().call_deferred("change_scene_to_file", WIN_SCREEN)
 
-# If hit, swap screen to death screen
+
+# Take damage if hit by area in enemy group
+func _hit(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group(ENEMY_GROUP):
+		take_damage()
+
+
+# Function to swap to death screen
 func take_damage() -> void:
 	get_tree().call_deferred("change_scene_to_file", DEATH_SCREEN)
 
 
+# Produce one boba if total boba produced is under 20
+# Update label
 func _production() -> void:
 	if boba_produced <= MAX_BOBA - BOBA_AMOUNT:
 		boba_produced += BOBA_AMOUNT
@@ -46,5 +55,6 @@ func _production() -> void:
 		label.text = "boba left x" + str(MAX_BOBA-boba_produced)
 
 
+# Function to show boba left
 func get_boba_left() -> int:
 	return MAX_BOBA - boba_produced
