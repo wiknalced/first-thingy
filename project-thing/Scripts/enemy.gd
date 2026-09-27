@@ -22,15 +22,14 @@ const ENEMY_GROUP = "enemy"
 const DELETION = "queue_free"
 
 
-const THREE_QUARTER_FRACTION := 0.75
-const HALF_FRACTION := 0.5
-const QUARTER_FRACTION := 0.25
+const THREE_QUARTER_FRACTION = 0.75
+const HALF_FRACTION = 0.5
+const QUARTER_FRACTION = 0.25
 
 const ORIGINAL_TIME_FRAME = 0
 const THREE_QUARTER_TIME_FRAME = 1
 const HALF_TIME_FRAME = 2
 const QUARTER_TIME_FRAME = 3
-const SLIVER_TIEM_FRAME = 4
 
 # Timer variables
 @onready var three_quarter : float  = 0

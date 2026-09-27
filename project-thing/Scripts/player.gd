@@ -10,7 +10,7 @@ var health : int = 5
 
 # Helpful values
 const MAX_HEALTH = 5
-const MIN_HEALTH = 0
+const MIN_HEALTH = 1
 const DAMAGE = 1
 const HEAL = 1
 
@@ -61,9 +61,11 @@ func _hit_something(area: Area2D) -> void:
 	
 	# Checks if area has hit a collectible item and to heal if it has
 	if area.is_in_group(COLLECTIBLES_GROUP):
-		if health <= MAX_HEALTH:
+		if health < MAX_HEALTH:
 			health += HEAL
 			update_boba()
+		else:
+			return
 	
 	# Validity check for if area isn't in any of the top groups
 	else:

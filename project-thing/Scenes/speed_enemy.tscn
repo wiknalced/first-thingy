@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_1bjwj"]
 [ext_resource type="Texture2D" uid="uid://bstaq71070prp" path="res://Assets/Enemies/Digitech animation/timer_frame0002.png" id="5_k1x8b"]
 [ext_resource type="Texture2D" uid="uid://ddk56xlox0th1" path="res://Assets/Enemies/Digitech animation/timer_frame0003.png" id="6_8jawj"]
-[ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_p8c2j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t2uob"]
 font_size = 24
@@ -32,9 +31,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_8jawj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_p8c2j")
 }],
 "loop": true,
 "name": &"default",

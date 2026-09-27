@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_1xpv5"]
 [ext_resource type="Texture2D" uid="uid://bstaq71070prp" path="res://Assets/Enemies/Digitech animation/timer_frame0002.png" id="5_5xltp"]
 [ext_resource type="Texture2D" uid="uid://ddk56xlox0th1" path="res://Assets/Enemies/Digitech animation/timer_frame0003.png" id="6_m3kkj"]
-[ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_prg4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i828r"]
 animations = [{
@@ -23,9 +22,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_m3kkj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_prg4l")
 }],
 "loop": true,
 "name": &"default",
