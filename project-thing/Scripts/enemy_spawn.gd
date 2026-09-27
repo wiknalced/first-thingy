@@ -3,7 +3,6 @@ extends StaticBody2D
 var enemies = ["Basic", "Tank", "Sole"]
 var total_enemy : int = 0
 
-@export var enemy_spawn_timer : Timer
 @export var spawn_point : PathFollow2D
 @export var basic_scene : PackedScene
 @export var tank_scene : PackedScene
@@ -16,7 +15,7 @@ func _process(_delta):
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _spawn_enemy() -> void:
-	var enemy_type = enemies.pick_random()
+	var enemy_type = "Tank"
 	if enemy_type == "Basic":
 		var enemy= basic_scene.instantiate()
 		add_child(enemy)
