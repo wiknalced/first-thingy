@@ -1,5 +1,7 @@
 extends Control
 
+var pause_input = "esc"
+
 func _ready() -> void:
 	hide()
 
@@ -15,13 +17,10 @@ func pause():
 	get_tree().paused = true
 
 func inputEsc():
-	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
+	if Input.is_action_just_pressed(pause_input) and get_tree().paused == false:
 		pause()
-		print("paused")
-	elif Input.is_action_just_pressed("esc") and get_tree().paused == true:
+	elif Input.is_action_just_pressed(pause_input) and get_tree().paused == true:
 		resume()
-		print("paused")
-	
 
 
 func _on_resume_box_pressed() -> void:

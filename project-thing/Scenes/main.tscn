@@ -64,7 +64,7 @@ shape = SubResource("RectangleShape2D_jjvhh")
 position = Vector2(216, 232)
 
 [node name="Enemy_Timer" type="Timer" parent="." unique_id=832517963]
-wait_time = 82.74900000000001
+wait_time = 3.5
 autostart = true
 
 [node name="player" parent="." unique_id=1743508133 instance=ExtResource("1_jjgbg")]

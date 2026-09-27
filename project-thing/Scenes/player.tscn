@@ -31,7 +31,7 @@ shape = SubResource("CapsuleShape2D_vgqql")
 [node name="Health" type="CanvasLayer" parent="." unique_id=1807260367]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Health" unique_id=1201580872]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 65.0
