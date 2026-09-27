@@ -21,12 +21,12 @@ func _spawn_enemy() -> void:
 		var enemy= basic_scene.instantiate()
 		add_child(enemy)
 		enemy.global_position = spawn_point.global_position
-		
+
 	elif enemy_type == TANK_ENEMY:
 		var tank = tank_scene.instantiate()
 		add_child(tank)
 		tank.global_position = spawn_point.global_position
-		
+
 	elif enemy_type == SPEED_ENEMY:
 		var speed = speed_scene.instantiate()
 		add_child(speed)
