@@ -7,11 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cj2dmlx8pv07j" path="res://Scenes/pause_menu.tscn" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://cln4p42jfeyao" path="res://Assets/Map Components/Untitled_Artwork.png" id="8_344ge"]
-[ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="8_ynf5e"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21xkr"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6bp64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(97.5, 655)
@@ -46,18 +41,6 @@ texture = ExtResource("2_jjvhh")
 position = Vector2(583.6667, 328.24997)
 scale = Vector2(0.29133332, 0.29133332)
 texture = ExtResource("8_344ge")
-
-[node name="ActualFloor" type="Sprite2D" parent="." unique_id=1018971350]
-visible = false
-position = Vector2(577.5, 386.5)
-scale = Vector2(1.7828125, 1.5083333)
-texture = SubResource("CompressedTexture2D_21xkr")
-
-[node name="Walls" type="Sprite2D" parent="." unique_id=2052556626]
-visible = false
-position = Vector2(576, 290)
-scale = Vector2(1.7796875, 1.5916667)
-texture = SubResource("CompressedTexture2D_6bp64")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1462920220]
 
@@ -112,22 +95,37 @@ offset_bottom = 208.0
 scale = Vector2(0.25, 0.25)
 
 [node name="Button" type="Button" parent="." unique_id=200413630]
-offset_left = 1072.0
-offset_top = 32.0
-offset_right = 1112.0
-offset_bottom = 104.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1064.0
+offset_top = 48.0
+offset_right = 1104.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_hptm8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=16061044]
-position = Vector2(28.00002, 34.875)
-scale = Vector2(0.054, 0.031)
-texture = ExtResource("8_ynf5e")
+[node name="ColorRect2" type="ColorRect" parent="Button" unique_id=1214605400]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 32.0
+offset_bottom = 80.0
+mouse_filter = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="Button" unique_id=1090559411]
-position = Vector2(12.7500305, 34.875)
-scale = Vector2(0.054285716, 0.031)
-texture = ExtResource("8_ynf5e")
+[node name="ColorRect" type="ColorRect" parent="Button" unique_id=1779255002]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 16.0
+offset_bottom = 80.0
+mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_enemy_timer"]
 [connection signal="timeout" from="Timer2" to="." method="_generate"]
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_pause_press"]

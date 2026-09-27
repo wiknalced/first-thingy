@@ -71,7 +71,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_285gn")
 
 [node name="Timer" type="Timer" parent="." unique_id=1504165750]
-wait_time = 10.0
+wait_time = 5.5
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="." unique_id=813676310]

@@ -92,6 +92,7 @@ label_settings = SubResource("LabelSettings_hghv2")
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717294205]
+rotation = 1.5707964
 texture = ExtResource("2_auwsv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=281953313]

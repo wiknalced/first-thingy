@@ -60,7 +60,11 @@ func _physics_process(_delta: float) -> void:
 
 
 func _entered_area(area: Area2D) -> void:
-	if area.is_in_group("mound") or area.is_in_group("player_detect") or area.is_in_group("enemy"):
+	if (
+		area.is_in_group("mound") or 
+		area.is_in_group("player_detect") or 
+		area.is_in_group("enemy")
+):
 		call_deferred("queue_free")
 
 func _detect(area: Area2D) -> void:

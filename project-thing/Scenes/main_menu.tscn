@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://05pqxvcyiapv" path="res://Assets/Map Components/Layer_10 1.png" id="3_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_trj04"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_16hvj"]
-[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="5_yhxw7"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://djppebkrlxsgk" path="res://Assets/sprite.png" id="6_vr1f0"]
 
 [sub_resource type="Image" id="Image_8jah3"]

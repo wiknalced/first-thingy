@@ -3,7 +3,7 @@ extends StaticBody2D
 var health : int = 1
 var boba_produced : int = 0
 
-const MAX_BOBA = 25
+const MAX_BOBA = 20
 const BOBA_AMOUNT = 1
 
 const HEALTH_CONSTRAINT = 1
