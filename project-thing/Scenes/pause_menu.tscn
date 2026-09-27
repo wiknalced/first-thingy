@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://buqddi0g55ju4" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_1och7"]
-[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_1och7"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="3_1och7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
 font_size = 100

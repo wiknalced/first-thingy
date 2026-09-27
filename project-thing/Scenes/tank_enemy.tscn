@@ -37,8 +37,8 @@ radius = 54.0
 height = 116.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6skfv"]
-radius = 55.0
-height = 116.0
+radius = 56.0
+height = 122.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6skfv"]
 radius = 193.01036
@@ -52,6 +52,7 @@ script = ExtResource("1_6skfv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1258976827]
 position = Vector2(-3.8146973e-06, 3.8146973e-06)
+rotation = 1.5707964
 scale = Vector2(1.2342119, 1.2342119)
 texture = ExtResource("2_a6ujq")
 

@@ -24,8 +24,8 @@ func _enemy_timer() -> void:
 		enemy_spawn_2._spawn_enemy()
 	enemy_spawn_timer.start()
 
-
 func _close_window() -> void:
 	tutorial.hide()
+
 func _pause_press() -> void:
 	pause_menu.pause()

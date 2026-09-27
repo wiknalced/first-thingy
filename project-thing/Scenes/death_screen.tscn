@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://demqgdr8ywld1" path="res://Assets/Screenshot 2026-09-27 013006.png" id="1_amiou"]
 [ext_resource type="Script" uid="uid://bj7ch7y60ylin" path="res://Scripts/finish_screens.gd" id="1_vb6s7"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_vb6s7"]
-[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/tutorial_buttons.gd" id="3_tpvs2"]
+[ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="3_tpvs2"]
 [ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="4_l3qio"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dmfwj"]
