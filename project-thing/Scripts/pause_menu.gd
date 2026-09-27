@@ -33,6 +33,7 @@ func _on_restart_box_pressed() -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_quit_box_pressed() -> void: #ALERT LAGS SO MUCH
+func _on_quit_box_pressed() -> void: 
+	resume()
 	get_tree().call_deferred("change_scene_to_file", 
 	"res://scenes/main_menu.tscn")
