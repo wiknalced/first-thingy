@@ -9,21 +9,6 @@
 [ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="6_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_ta2yt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
-radius = 19.0
-height = 62.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
-radius = 20.0
-height = 66.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
-radius = 117.01709
-
-[sub_resource type="LabelSettings" id="LabelSettings_hghv2"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_hghv2"]
 animations = [{
 "frames": [{
@@ -59,12 +44,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aftqw"]
+radius = 19.0
+height = 62.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hghv2"]
+radius = 20.0
+height = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
+radius = 117.01709
+
+[sub_resource type="LabelSettings" id="LabelSettings_hghv2"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dp5w"]
 shader = ExtResource("6_ghaa6")
 shader_parameter/transparency = 0.5
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1529862797 groups=["enemy"]]
 script = ExtResource("1_hghv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717294205]
+rotation = 1.5707964
+texture = ExtResource("2_auwsv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=281953313]
+sprite_frames = SubResource("SpriteFrames_hghv2")
+frame_progress = 0.76635396
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1145042871]
+position = Vector2(2.0544353e-06, 47)
+sprite_frames = SubResource("SpriteFrames_hghv2")
+frame_progress = 0.76635396
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286412455]
 position = Vector2(0, -12)
@@ -90,19 +103,6 @@ label_settings = SubResource("LabelSettings_hghv2")
 
 [node name="Timer" type="Timer" parent="." unique_id=987897364]
 autostart = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717294205]
-rotation = 1.5707964
-texture = ExtResource("2_auwsv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=281953313]
-sprite_frames = SubResource("SpriteFrames_hghv2")
-frame_progress = 0.76635396
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1145042871]
-position = Vector2(2.0544353e-06, 47)
-sprite_frames = SubResource("SpriteFrames_hghv2")
-frame_progress = 0.76635396
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2100437921]
 material = SubResource("ShaderMaterial_1dp5w")

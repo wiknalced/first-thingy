@@ -5,7 +5,6 @@ extends Node2D
 @export var enemy_spawn_timer: Timer
 @export var pause_menu : Control
 @onready var generator_timer = $Timer2
-@onready var tutorial = $Window
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,9 +22,6 @@ func _enemy_timer() -> void:
 	else:
 		enemy_spawn_2._spawn_enemy()
 	enemy_spawn_timer.start()
-
-func _close_window() -> void:
-	tutorial.hide()
 
 func _pause_press() -> void:
 	pause_menu.pause()
