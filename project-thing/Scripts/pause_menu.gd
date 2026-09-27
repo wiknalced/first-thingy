@@ -1,6 +1,6 @@
 extends Control
 
-var pause_input = "esc"
+const PAUSE_INPUT = "esc"
 
 func _ready() -> void:
 	hide()
@@ -17,9 +17,9 @@ func pause():
 	get_tree().paused = true
 
 func inputEsc():
-	if Input.is_action_just_pressed(pause_input) and get_tree().paused == false:
+	if Input.is_action_just_pressed(PAUSE_INPUT) and get_tree().paused == false:
 		pause()
-	elif Input.is_action_just_pressed(pause_input) and get_tree().paused == true:
+	elif Input.is_action_just_pressed(PAUSE_INPUT) and get_tree().paused == true:
 		resume()
 
 
@@ -32,6 +32,7 @@ func _on_restart_box_pressed() -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_quit_box_pressed() -> void: #ALERT LAGS SO MUCH
+func _on_quit_box_pressed() -> void:
+	resume()
 	get_tree().call_deferred("change_scene_to_file", 
 	"res://scenes/main_menu.tscn")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="2_feyax"]
 [ext_resource type="Texture2D" uid="uid://c64v6p14l2c31" path="res://Assets/Tutorial Assets/Screenshot 2026-09-27 012206.png" id="2_p8jf4"]
-[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="3_omtrn"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Fonts/Jaro-Regular.ttf" id="3_omtrn"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="3_p8jf4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i6t4g"]
@@ -14,7 +14,7 @@ font_size = 50
 font = ExtResource("3_omtrn")
 font_size = 50
 
-[node name="Control" type="Control" unique_id=586607024]
+[node name="Control2" type="Control" unique_id=586607024]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

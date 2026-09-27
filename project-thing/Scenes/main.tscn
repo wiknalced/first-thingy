@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bcoiqnrkkcrdy" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://b0s2c2bvkc100" path="res://Scenes/enemy_spawn.tscn" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://d370rh7k3t37r" path="res://Assets/health ui background.png" id="2_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/mound.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bc3tm7qv2cnos" path="res://Scenes/generator.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cj2dmlx8pv07j" path="res://Scenes/pause_menu.tscn" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://cln4p42jfeyao" path="res://Assets/Map Components/Untitled_Artwork.png" id="8_344ge"]
 

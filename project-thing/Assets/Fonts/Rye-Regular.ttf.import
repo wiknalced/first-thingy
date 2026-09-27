@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://osfbvtj6k1n6"
-path="res://.godot/imported/Rye-Regular.ttf-39b5ab353cf8d9e66ca0ab9f10a10d80.fontdata"
+path="res://.godot/imported/Rye-Regular.ttf-764a8447eb08e8b89cb5cfbccc9deda4.fontdata"
 
 [deps]
 
-source_file="res://Assets/Rye-Regular.ttf"
-dest_files=["res://.godot/imported/Rye-Regular.ttf-39b5ab353cf8d9e66ca0ab9f10a10d80.fontdata"]
+source_file="res://Assets/Fonts/Rye-Regular.ttf"
+dest_files=["res://.godot/imported/Rye-Regular.ttf-764a8447eb08e8b89cb5cfbccc9deda4.fontdata"]
 
 [params]
 

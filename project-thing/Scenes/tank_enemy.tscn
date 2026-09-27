@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6uf4ci1ukcy5"]
 
 [ext_resource type="Script" uid="uid://bypwb2mpadx82" path="res://Scripts/tank_enemy.gd" id="1_6skfv"]
-[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="2_6swbc"]
+[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle shader/circle_shader.gdshader" id="2_6swbc"]
 [ext_resource type="Texture2D" uid="uid://bupgeff7f8vge" path="res://Assets/Enemies/tank enemy.png" id="2_a6ujq"]
 [ext_resource type="Texture2D" uid="uid://ciss57lpbvpmy" path="res://Assets/Enemies/Digitech animation/timer_frame0000.png" id="3_jes07"]
 [ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_1xpv5"]

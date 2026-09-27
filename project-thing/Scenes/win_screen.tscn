@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcb2260ssi5be" path="res://Assets/Screenshot 2026-09-27 015202.png" id="1_l5sol"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="3_mf36t"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="4_pq638"]
-[ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Rye-Regular.ttf" id="5_8snof"]
+[ext_resource type="FontFile" uid="uid://osfbvtj6k1n6" path="res://Assets/Fonts/Rye-Regular.ttf" id="5_8snof"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1rjdi"]
 font = ExtResource("5_8snof")
@@ -23,7 +23,7 @@ font_color = Color(0.81960785, 0.7137255, 0.43529412, 1)
 outline_size = 5
 outline_color = Color(0.5921569, 0.5019608, 0.25882354, 1)
 
-[node name="Control" type="Control" unique_id=1674516976]
+[node name="Control2" type="Control" unique_id=1674516976]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -11,12 +11,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goxce"]
 size = Vector2(101, 20)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=402275816 node_paths=PackedStringArray("spawn_point")]
+[node name="StaticBody2D" type="StaticBody2D" unique_id=402275816 node_paths=PackedStringArray("enemy_spawn_timer", "spawn_point")]
 script = ExtResource("1_g5vkx")
+enemy_spawn_timer = NodePath("Timer")
 spawn_point = NodePath("Path2D/PathFollow2D")
 basic_scene = ExtResource("2_um0s4")
 tank_scene = ExtResource("3_1fae2")
-sole_scene = ExtResource("4_od1gh")
+speed_scene = ExtResource("4_od1gh")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1998236403]
 position = Vector2(-1.9073486e-06, 0)

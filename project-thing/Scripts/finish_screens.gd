@@ -1,20 +1,13 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+const GAME_PAGE = "res://scenes/main.tscn"
+const MAIN_MENU = "res://scenes/main_menu.tscn"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+# Go to main game when button pressed
 func _return_home() -> void:
-	get_tree().call_deferred("change_scene_to_file", 
-	"res://scenes/main.tscn")
+	get_tree().call_deferred("change_scene_to_file", GAME_PAGE)
 
+# Go back to main menu when button pressed
 func _play_again() -> void:
-	get_tree().call_deferred("change_scene_to_file", 
-	"res://scenes/main_menu.tscn")
+	get_tree().call_deferred("change_scene_to_file", MAIN_MENU)

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c7gw6dnbn5057" path="res://Assets/Enemies/Digitech animation/timer_frame0001.png" id="4_po0sg"]
 [ext_resource type="Texture2D" uid="uid://bstaq71070prp" path="res://Assets/Enemies/Digitech animation/timer_frame0002.png" id="5_haro7"]
 [ext_resource type="Texture2D" uid="uid://ddk56xlox0th1" path="res://Assets/Enemies/Digitech animation/timer_frame0003.png" id="6_56vhr"]
-[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle test/circle_shader.gdshader" id="6_ghaa6"]
+[ext_resource type="Shader" uid="uid://dsrc7m6hfw4if" path="res://Scripts/hollow circle shader/circle_shader.gdshader" id="6_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://bd0tb5fs6gngv" path="res://Assets/Enemies/Digitech animation/timer_frame0004.png" id="7_ta2yt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hghv2"]

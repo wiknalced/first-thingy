@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var health : int = 1
+
 var boba_produced : int = 0
 
 const MAX_BOBA = 20
@@ -8,6 +8,11 @@ const BOBA_AMOUNT = 1
 
 const HEALTH_CONSTRAINT = 1
 const DAMAGE_AMOUNT = 1
+
+const ENEMY_GROUP = "enemy"
+
+const DEATH_SCREEN = "res://scenes/death_screen.tscn"
+const WIN_SCREEN = "res://scenes/win_screen.tscn"
 
 @export var boba_scene : PackedScene
 
@@ -17,29 +22,18 @@ const DAMAGE_AMOUNT = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	label.text = "boba left x" + str(MAX_BOBA-boba_produced)
+	label.text = "boba left x" + str(get_boba_left())
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Check if boba produced has reached winning amount.
+# Once winning amount is reached, swap screen to win screen
 func _process(_delta: float) -> void:
 	if boba_produced >= MAX_BOBA:
-		get_tree().call_deferred("change_scene_to_file", 
-		"res://scenes/win_screen.tscn")
+		get_tree().call_deferred("change_scene_to_file", WIN_SCREEN)
 
-
-func _hit(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.is_in_group("enemy"):
-		take_damage()
-
-
-
+# If hit, swap screen to death screen
 func take_damage() -> void:
-	if health > HEALTH_CONSTRAINT:
-		health -= DAMAGE_AMOUNT
-		print(health)
-	else: 
-		get_tree().call_deferred("change_scene_to_file", 
-	"res://scenes/death_screen.tscn")
+	get_tree().call_deferred("change_scene_to_file", DEATH_SCREEN)
 
 
 func _production() -> void:
@@ -50,3 +44,7 @@ func _production() -> void:
 		boba.global_position = follow.global_position
 		get_tree().current_scene.add_child(boba)
 		label.text = "boba left x" + str(MAX_BOBA-boba_produced)
+
+
+func get_boba_left() -> int:
+	return MAX_BOBA - boba_produced

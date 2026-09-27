@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bc3tm7qv2cnos"]
 
-[ext_resource type="Script" uid="uid://b1g4ram63lpw3" path="res://Scripts/mound.gd" id="1_mhu1f"]
+[ext_resource type="Script" uid="uid://b1g4ram63lpw3" path="res://Scripts/generator.gd" id="1_mhu1f"]
 [ext_resource type="PackedScene" uid="uid://e330qujxkume" path="res://Scenes/boba.tscn" id="2_285gn"]
 [ext_resource type="Texture2D" uid="uid://bqrl3vqjrgrpi" path="res://Assets/Enemies/Digitech animation/3FDBCA51-7A45-404C-8235-9B376AD45E7C.png" id="3_hyjo8"]
 [ext_resource type="Texture2D" uid="uid://dpgc82mt2n3i" path="res://Assets/Enemies/Digitech animation/9EE00CA4-5403-4D1E-8ACD-2B76D1BDD313.png" id="4_c5ro5"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dy3t6fj1oc3lw" path="res://Assets/Enemies/Digitech animation/E0586FF3-662E-45FA-9917-5ED4A75E910E.png" id="7_p8kfh"]
 [ext_resource type="Texture2D" uid="uid://b400ql0yt6pb" path="res://Assets/Enemies/Digitech animation/F2828D20-581D-4E24-9E7D-4923C76AD427.png" id="8_i6f3i"]
 [ext_resource type="Texture2D" uid="uid://ykg6obwfv8f1" path="res://Assets/boba.png" id="9_sm607"]
-[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="10_uqbn5"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Fonts/Jaro-Regular.ttf" id="10_uqbn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw36b"]
 size = Vector2(20, 26)

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://chswqwfmxijle"
-path="res://.godot/imported/Jaro-Regular.ttf-5a8355cbe7afee9fc77675a2487c2892.fontdata"
+path="res://.godot/imported/Jaro-Regular.ttf-9d9082d70da3e04764657ebe0a981e74.fontdata"
 
 [deps]
 
-source_file="res://Assets/Jaro-Regular.ttf"
-dest_files=["res://.godot/imported/Jaro-Regular.ttf-5a8355cbe7afee9fc77675a2487c2892.fontdata"]
+source_file="res://Assets/Fonts/Jaro-Regular.ttf"
+dest_files=["res://.godot/imported/Jaro-Regular.ttf-9d9082d70da3e04764657ebe0a981e74.fontdata"]
 
 [params]
 

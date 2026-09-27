@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c7h7ogunb6nib" path="res://Assets/Tutorial Assets/Screenshot 2026-09-27 014556.png" id="3_i3duj"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="4_i3duj"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="5_rd2he"]
-[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="6_oja5n"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Fonts/Jaro-Regular.ttf" id="6_oja5n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i6t4g"]
 font = ExtResource("6_oja5n")
 font_size = 50
 
-[node name="Control" unique_id=586607024 instance=ExtResource("1_te16x")]
+[node name="Control2" unique_id=586607024 instance=ExtResource("1_te16x")]
 offset_top = 160.0
 offset_right = -160.0
 script = ExtResource("2_ccwba")

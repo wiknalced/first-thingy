@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rl1hx4wjxkpn" path="res://Assets/Tutorial Assets/Screenshot 2026-09-27 014732.png" id="2_0tok8"]
 [ext_resource type="Script" uid="uid://cy1wjsey4hy1c" path="res://Scripts/buttons.gd" id="3_vm3w1"]
 [ext_resource type="Texture2D" uid="uid://dbxpr41hx5ovw" path="res://Assets/Map Components/Layer_10.png" id="4_30h3j"]
-[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Jaro-Regular.ttf" id="5_tx4xp"]
+[ext_resource type="FontFile" uid="uid://chswqwfmxijle" path="res://Assets/Fonts/Jaro-Regular.ttf" id="5_tx4xp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i6t4g"]
 font = ExtResource("5_tx4xp")
